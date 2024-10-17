@@ -46,7 +46,7 @@ else
 	parent = game:GetService("CoreGui")
 end
 KeySys.Parent = parent
-KeySys.Main.ElseDesc2.Text = "Alternatively you can buy Pro at https://discord.gg/sirius"
+KeySys.Main.ElseDesc2.Text = "或者，您可以在https://discord.gg/sirius购买pro"
 KeySys.Enabled = false
 KeySys.Main.Visible = true
 
@@ -202,23 +202,23 @@ local coreguis = {"PlayerList","Chat","EmotesMenu","Health","Backpack"}
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
 
--- Tables
+-- 表
 
 local UniversalScripts = {
 	InfiniteYield = {
-		Name = "Infinite Yield",
+		Name = "无限产量",
 		Author = "Edge",
 		Loadstring = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
 		Colour = Color3.fromRGB(57, 57, 57),
 	},
 	SiriusUni = {
-		Name = "Sirius Universal",
+		Name = "天狼星普遍",
 		Author = "Sirius",
 		Loadstring = "https://raw.githubusercontent.com/shlexware/Sirius/request/game/Universal",
 		Colour = Color3.fromRGB(188, 57, 59),
 	},
 	SimpleSpy = {
-		Name = "SimpleSpy",
+		Name = "简单的间谍",
 		Author = "exx",
 		Loadstring = "https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua",
 		Colour = Color3.fromRGB(0, 170, 127),
@@ -230,7 +230,7 @@ local UniversalScripts = {
 		Colour = Color3.fromRGB(179, 97, 42),
 	},
 	Dex = {
-		Name = "Dex Explorer",
+		Name = "德克斯探险家",
 		Author = "Moon",
 		Loadstring = "https://pastebin.com/raw/fPP8bZ8Z",
 		Colour = Color3.fromRGB(120, 170, 160),
@@ -240,36 +240,36 @@ local UniversalScripts = {
 
 local DetectionScripts = {
 	spongebobguess = {
-		Name = "Teleport to finish",
-		Description = "This script will teleport to the finish of the game. ha mlemix",
+		Name = "传送到完成",
+		Description = "此脚本将传送到游戏的完成. xgo 留言",
 		Games = {8494013385},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/dipyRqzR",
 	},
 	DecayingWinter = {
-		Name = "Decaying Winter",
-		Description = "This script is a community submitted script, we have no info on it",
+		Name = "腐朽的冬天",
+		Description = "",
 		Games = {7551121821},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/Aidez/decaying_winter/main/GOODWILL_COMMAND_SCRIPT",
 	},
 	bedwars = {
-		Name = "Bedwars",
-		Description = "This script is a community submitted script, we have no info on it",
+		Name = "是矮人",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {6872265039},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua",
 	},
 	Sirius = {
 		Name = "Sirius Loader",
-		Description = "The best script hub available",
+		Description = "最好的脚本集线器可用",
 		Games = {286090429,3233893879,292439477},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/shlexware/Sirius/request/Loader",
 	},
 	Vision = {
 		Name = "Vision",
-		Description = "A script hub with a few high quality games",
+		Description = "一个带有一些高品质游戏的脚本集线器",
 		Games = {6769764667,6847090259,7305309231,8116417963},
 		Premium = false,
 		KeySys = true,
@@ -277,7 +277,7 @@ local DetectionScripts = {
 	},
 	DarkHub = {
 		Name = "Dark Hub",
-		Description = "One of the most popular script hubs to date, with little compromise.",
+		Description = "迄今最受欢迎的剧本中心之一，妥协.",
 		Games = {2377868063,263761432,606849621,3527629287,2555870920,5081773298,2551991523,1962086868,3101667897,6483072762,6494529140,3297964905,5523314295,301549746,5041144419,370731277,142823291,621129760,6284583030,5104202731},
 		Premium = false,
 		KeySys = true,
@@ -285,126 +285,126 @@ local DetectionScripts = {
 	},
 	IdentityFraud = {
 		Name = "Identity Fraud",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {338521019},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/tkorra/Identity_Fraud/main/main.lua",
 	},
 	CriticalStrike = {
 		Name = "Critical Strike",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {111311599},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/WrF6UWQg",
 	},
 	DBR = {
 		Name = "Dragon Ball Rage",
-		Description = "A DomainX exclusive, by our developer, Urbanstorm",
+		Description = "DomainX独家，我们的开发人员，Urbanstorm",
 		Games = {71315343},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/Urbanstorms/DomainX/main/DBR.lua",
 	},
 	Vega = {
 		Name = "Vega Remover",
-		Description = "A powerful tool that removes known barriers in cafe games",
+		Description = "一个强大的工具，可在咖啡式游戏中删除已知的障碍",
 		Games = {5580097107,738548299,610172644,1217895158,3522042406,679498303},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/realvega/VegaRemover/main/source",
 	},
 	KaijuParadise = {
 		Name = "Kaiju Paradise",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {6456351776},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/realoneofu/RealZzHub/main/Main.lua",
 	},
 	FNF = {
 		Name = "Friday Night Funkin'",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {6447798030},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",
 	},
 	PrisonLife = {
 		Name = "Prison Life",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {155615604},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife",
 	},
 	andestsim = {
 		Name = "Anime Destroyer Simulator",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {7082539621},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/DevPolarhub/ScriptPacks/main/Anime%20Destroyers%20Simulator",
 	},
 	towerdefensesim = {
 		Name = "Tower Defense Simulator",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {3260590327},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/Mjryt8Mm",
 	},
 	DemonSlayer = {
 		Name = "Demon Slayer RPG 2",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {4734949248},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/HDTerebi/DSRPG2/master/Shitty%20GUI.lua",
 	},
 	NDS = {
 		Name = "Natural Disaster Survival",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {189707},
 		Premium = false,
 		Loadstring = "https://gist.githubusercontent.com/TurkOyuncu99/7c75386107937fa006304efd24543ad4/raw/8d759dfcd95d39949c692735cfdf62baec0bf835/cafwetweg",
 	},
 	RoGhoul = {
 		Name = "Ro-Ghoul",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {914010731},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/z4gs/scripts/master/Ro-Ghoul%20Auto%20Farm.lua",
 	},
 	MegaEasyObby = {
 		Name = "Mega Easy Obby",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {3587619225},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/X361rzKq",
 	},
 	NinjaLegends = {
 		Name = "Ninja Legends",
-		Description = "Full featured autofarm script for Ninja Legends",
+		Description = "为ninja传说提供了全功能自动磁带脚本",
 		Games = {3956818381},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/Q39hYJ8V",
 	},
 	MyRestaurant = {
 		Name = "My Restaurant",
-		Description = "Full featured autofarm script for My Restaurant",
+		Description = "为我的餐厅提供全功能自动售图脚本",
 		Games = {4490140733},
 		Premium = false,
 		Loadstring = "http://void-scripts.com/Scripts/myRest.lua",
 	},
 	StopItSlender = {
 		Name = "Stop It Slender!",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
 		Games = {30869879},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/hFxynXvs",
 	},
 	inooarctic = {
 		Name = "Remote Control Panel",
-		Description = "Mess around with the cooling elements of the core",
+		Description = "用核心的冷却元素弄乱",
 		Games = {1033860623},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/choke-dev/RE-Script/main/Innovation%20Inc%20Games/IAB%20FluxUI.lua?token=ALLESGRKZAOXBNLRWXVQORTBIXH3A",
 	},
 	StrollerAbuse = {
 		Name = "Stroller UI",
-		Description = "Kill and bring players using the Stroller tool's flaws",
+		Description = "杀死并使用婴儿车工具的缺陷带来球员",
 		Games = {1662219031},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/Q4qQh4MS",
@@ -628,7 +628,7 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 end
 
 function Refresh()
-	Notify("Hold on","We're refreshing your character, this can take a moment",4335476290,true)
+	Notify("坚持","xgo正在刷新你的角色，这可能需要一点时间",4335476290,true)
 	local PreviousPosition = LocalPlayer.Character.HumanoidRootPart.CFrame
 	LocalPlayer.Character.Humanoid.Health = 0
 	if LocalPlayer.Character:FindFirstChild("Head") then LocalPlayer.Character.Head:Destroy() end
@@ -673,14 +673,14 @@ function AttachToPlayer(Player)
 			HumanoidRootPart.CFrame = PlHumanoidRootPart.CFrame
 		until (Tool.Parent ~= Character or not HumanoidRootPart or not PlHumanoidRootPart or not HumanoidRootPart.Parent or not PlHumanoidRootPart.Parent or n > 250) and n > 2
 	else
-		Toast("You need a tool to perform this action on "..Player.Name) 
+		Toast("您需要一个工具来执行此操作"..Player.Name) 
 	end
 end
 
 function Kill(Player)
 	if HasTools() then
 		if Player and Player ~= nil then
-			Toast("Trying to kill "..Player.Name)
+			Toast("试图杀死"..Player.Name)
 			local RegularPosition = FindRootPart(LocalPlayer.Character).CFrame
 			Refresh()
 			wait()
@@ -695,10 +695,10 @@ function Kill(Player)
 			wait(1)
 			LocalPlayer.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = RegularPosition
 		else
-			Toast("We are unable to find the Player instance")
+			Toast("我们无法找到播放器实例")
 		end
 	else
-		Toast("You need a tool to perform kill on "..Player.Name) 
+		Toast("您需要一个工具来执行终止"..Player.Name) 
 	end
 end
 
@@ -734,7 +734,7 @@ function elegance(check)
 	if not Domain then
 		return
 	end
-	if not Domain:FindFirstChild("Main") then
+	if not Domain:FindFirstChild("主要") then
 		return
 	end
 	if Domain.Main.KeybindNote.TextTransparency ~= 1 then
@@ -811,7 +811,7 @@ end)
 
 function Respawn()
 
-	Notify("Respawn","We're respawning your character, this can take a moment",4335476290,true)
+	Notify("重生","xgo正在重申你的角色，这可能需要片刻",4335476290,true)
 	local Character = LocalPlayer.Character
 	if Character:FindFirstChildOfClass("Humanoid") then 
 		Character:FindFirstChildOfClass("Humanoid"):ChangeState(15) 
@@ -943,7 +943,7 @@ function NoClip()
 		end
 	end
 	Noclipping = game:GetService('RunService').Stepped:Connect(NoclipLoop)
-	Toast("Character NoClip enabled")
+	Toast("字符NOCLIP已启用")
 end
 
 function ReClip()
@@ -951,11 +951,11 @@ function ReClip()
 		Noclipping:Disconnect()
 	end
 	Clip = true
-	Toast("Character NoClip disabled")
+	Toast("字符NOCLIP禁用")
 end
 
 function God()
-	Toast("God Mode enabled - Respawn to disable")
+	Toast("上帝模式启用 - 重生以禁用")
 	local Cam = workspace.CurrentCamera
 	local Pos, Char = Cam.CFrame, LocalPlayer.Character
 	local Human = Char and Char.FindFirstChildWhichIsA(Char, "Humanoid")
@@ -978,11 +978,11 @@ end
 
 function Teleport(Player)
 	if game.Players:FindFirstChild(Player.Name) then
-		Toast("Attempting to teleport you to "..Player.Name)
+		Toast("试图传送您"..Player.Name)
 		local targetplayer = game.Workspace:FindFirstChild(Player.Name).HumanoidRootPart
 		LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(targetplayer.Position.X, targetplayer.Position.Y, targetplayer.Position.Z)
 	else
-		Toast(Player.Name.." has left the server")
+		Toast(Player.Name.." 已经离开了服务器")
 	end
 end
 
