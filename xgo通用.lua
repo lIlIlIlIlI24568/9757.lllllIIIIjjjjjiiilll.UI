@@ -3,8 +3,8 @@
 
 if not game:IsLoaded() then
 	game:GetService("StarterGui"):SetCore("SendNotification", {
-		Title = "脚本加载",
-		Text = "等待游戏完成加载！",
+		Title = "Script loading",
+		Text = "Waiting for the game to finish loading!",
 		Duration = 5
 	})
 	game.Loaded:Wait()
@@ -193,11 +193,11 @@ Converted["_YARHM"].IgnoreGuiInset = true
 Converted["_YARHM"].ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
 Converted["_YARHM"].ResetOnSpawn = false
 Converted["_YARHM"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Converted["_YARHM"].Name = "xgo 汉化全游戏通用"
+Converted["_YARHM"].Name = "YARHM"
 Converted["_YARHM"].Parent = game:GetService("CoreGui")
 
 Converted["_Open"].Font = Enum.Font.Gotham
-Converted["_Open"].Text = "三点击这个区域打开xgo."
+Converted["_Open"].Text = "Triple-click this region to open YARHM."
 Converted["_Open"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Open"].TextScaled = true
 Converted["_Open"].TextSize = 14
@@ -212,19 +212,19 @@ Converted["_Open"].Position = UDim2.new(0.499372631, 0, 0.06341701, 0)
 Converted["_Open"].Selectable = false
 Converted["_Open"].Size = UDim2.new(0, 493, 0, 50)
 Converted["_Open"].Visible = false
-Converted["_Open"].Name = "打开"
-Converted["_Open"].Parent = Converted["_xgo"]
+Converted["_Open"].Name = "Open"
+Converted["_Open"].Parent = Converted["_YARHM"]
 
-Converted["_UICorner"].Parent = Converted["_打开"]
+Converted["_UICorner"].Parent = Converted["_Open"]
 
 Converted["_UIPadding"].PaddingBottom = UDim.new(0, 10)
 Converted["_UIPadding"].PaddingLeft = UDim.new(0, 20)
 Converted["_UIPadding"].PaddingRight = UDim.new(0, 20)
 Converted["_UIPadding"].PaddingTop = UDim.new(0, 10)
-Converted["_UIPadding"].Parent = Converted["_打开"]
+Converted["_UIPadding"].Parent = Converted["_Open"]
 
 Converted["_ListButton"].Font = Enum.Font.Gotham
-Converted["_ListButton"].Text = "占位符"
+Converted["_ListButton"].Text = "Placeholder"
 Converted["_ListButton"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_ListButton"].TextSize = 14
 Converted["_ListButton"].TextWrapped = true
@@ -235,10 +235,10 @@ Converted["_ListButton"].BorderSizePixel = 0
 Converted["_ListButton"].Position = UDim2.new(0.0450000018, 0, 0.112000003, 0)
 Converted["_ListButton"].Size = UDim2.new(1, 0, 0, 50)
 Converted["_ListButton"].Visible = false
-Converted["_ListButton"].Name = "列表按钮"
-Converted["_ListButton"].Parent = Converted["_xgo"]
+Converted["_ListButton"].Name = "ListButton"
+Converted["_ListButton"].Parent = Converted["_YARHM"]
 
-Converted["_UICorner1"].Parent = Converted["_列表按钮"]
+Converted["_UICorner1"].Parent = Converted["_ListButton"]
 
 Converted["_Notifications"].AnchorPoint = Vector2.new(1, 0.5)
 Converted["_Notifications"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -247,18 +247,18 @@ Converted["_Notifications"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Notifications"].BorderSizePixel = 0
 Converted["_Notifications"].Position = UDim2.new(0.99000001, 0, 0.5, 0)
 Converted["_Notifications"].Size = UDim2.new(0, 242, 1, 0)
-Converted["_Notifications"].Name = "通知"
-Converted["_Notifications"].Parent = Converted["_xgo"]
+Converted["_Notifications"].Name = "Notifications"
+Converted["_Notifications"].Parent = Converted["_YARHM"]
 
 Converted["_UIListLayout"].Padding = UDim.new(0, 10)
 Converted["_UIListLayout"].HorizontalAlignment = Enum.HorizontalAlignment.Center
 Converted["_UIListLayout"].SortOrder = Enum.SortOrder.LayoutOrder
 Converted["_UIListLayout"].VerticalAlignment = Enum.VerticalAlignment.Bottom
-Converted["_UIListLayout"].Parent = Converted["通知"]
+Converted["_UIListLayout"].Parent = Converted["_Notifications"]
 
 Converted["_UIPadding1"].PaddingBottom = UDim.new(0, 10)
 Converted["_UIPadding1"].PaddingLeft = UDim.new(0, 10)
-Converted["_UIPadding1"].Parent = Converted["通知"]
+Converted["_UIPadding1"].Parent = Converted["_Notifications"]
 
 Converted["_Placeholder"].AnchorPoint = Vector2.new(0.5, 0)
 Converted["_Placeholder"].BackgroundColor3 = Color3.fromRGB(31.000001952052116, 31.000001952052116, 31.000001952052116)
@@ -266,10 +266,10 @@ Converted["_Placeholder"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Placeholder"].BorderSizePixel = 0
 Converted["_Placeholder"].Position = UDim2.new(0.0450000018, 0, 0.112000003, 0)
 Converted["_Placeholder"].Visible = false
-Converted["_Placeholder"].Name = "占位符"
-Converted["_Placeholder"].Parent = Converted["_通知"]
+Converted["_Placeholder"].Name = "Placeholder"
+Converted["_Placeholder"].Parent = Converted["_Notifications"]
 
-Converted["_UICorner2"].Parent = Converted["_占位符"]
+Converted["_UICorner2"].Parent = Converted["_Placeholder"]
 
 Converted["_TextLabel"].Font = Enum.Font.Gotham
 Converted["_TextLabel"].TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -284,7 +284,7 @@ Converted["_TextLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel"].BorderSizePixel = 0
 Converted["_TextLabel"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_TextLabel"].Size = UDim2.new(0.899999976, 0, 0.800000012, 0)
-Converted["_TextLabel"].Parent = Converted["_占位符"]
+Converted["_TextLabel"].Parent = Converted["_Placeholder"]
 
 Converted["_TextBoxPlaceholder"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextBoxPlaceholder"].BackgroundTransparency = 1
@@ -293,7 +293,7 @@ Converted["_TextBoxPlaceholder"].BorderSizePixel = 0
 Converted["_TextBoxPlaceholder"].Size = UDim2.new(1, 0, 0, 50)
 Converted["_TextBoxPlaceholder"].Visible = false
 Converted["_TextBoxPlaceholder"].Name = "TextBoxPlaceholder"
-Converted["_TextBoxPlaceholder"].Parent = Converted["_xgo"]
+Converted["_TextBoxPlaceholder"].Parent = Converted["_YARHM"]
 
 Converted["_UIListLayout1"].Padding = UDim.new(0, 5)
 Converted["_UIListLayout1"].FillDirection = Enum.FillDirection.Horizontal
@@ -335,7 +335,7 @@ Converted["_TextBox"].Parent = Converted["_TextBoxPlaceholder"]
 Converted["_UICorner4"].Parent = Converted["_TextBox"]
 
 Converted["_FloatingButton"].Font = Enum.Font.Unknown
-Converted["_FloatingButton"].Text = "射成凶手"
+Converted["_FloatingButton"].Text = "Shoot into murderer"
 Converted["_FloatingButton"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_FloatingButton"].TextScaled = true
 Converted["_FloatingButton"].TextSize = 14
@@ -348,7 +348,7 @@ Converted["_FloatingButton"].Position = UDim2.new(0, 125, 0, 40)
 Converted["_FloatingButton"].Size = UDim2.new(0, 50, 0, 100)
 Converted["_FloatingButton"].Visible = false
 Converted["_FloatingButton"].Name = "FloatingButton"
-Converted["_FloatingButton"].Parent = Converted["_xgo"]
+Converted["_FloatingButton"].Parent = Converted["_YARHM"]
 
 Converted["_UIPadding3"].PaddingBottom = UDim.new(0, 5)
 Converted["_UIPadding3"].PaddingLeft = UDim.new(0, 5)
@@ -382,7 +382,7 @@ Converted["_AddCustomModule"].Position = UDim2.new(0.5, 0, -0.5, 0)
 Converted["_AddCustomModule"].Size = UDim2.new(0, 440, 0, 268)
 Converted["_AddCustomModule"].ZIndex = 3
 Converted["_AddCustomModule"].Name = "AddCustomModule"
-Converted["_AddCustomModule"].Parent = Converted["_xgo"]
+Converted["_AddCustomModule"].Parent = Converted["_YARHM"]
 
 Converted["_UICorner6"].Parent = Converted["_AddCustomModule"]
 
@@ -449,7 +449,7 @@ Converted["_UIPadding4"].PaddingTop = UDim.new(0, 10)
 Converted["_UIPadding4"].Parent = Converted["_TextBox1"]
 
 Converted["_TextLabel2"].Font = Enum.Font.Gotham
-Converted["_TextLabel2"].Text = "只添加您信任的模块！"
+Converted["_TextLabel2"].Text = "Only add modules you trust!"
 Converted["_TextLabel2"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel2"].TextScaled = true
 Converted["_TextLabel2"].TextSize = 14
@@ -527,7 +527,7 @@ Converted["_DroppedGunBGUI"].Name = "DroppedGunBGUI"
 Converted["_DroppedGunBGUI"].Parent = Converted["_YARHM"]
 
 Converted["_TextLabel3"].Font = Enum.Font.SourceSansBold
-Converted["_TextLabel3"].Text = "扔枪！"
+Converted["_TextLabel3"].Text = "Dropped Gun!"
 Converted["_TextLabel3"].TextColor3 = Color3.fromRGB(255, 225.00001698732376, 0)
 Converted["_TextLabel3"].TextScaled = true
 Converted["_TextLabel3"].TextSize = 14
@@ -657,7 +657,7 @@ Converted["_UIGradient4"].Rotation = -44
 Converted["_UIGradient4"].Parent = Converted["_UIStroke7"]
 
 Converted["_AddCustomModule1"].Font = Enum.Font.Gotham
-Converted["_AddCustomModule1"].Text = "添加模块"
+Converted["_AddCustomModule1"].Text = "Add module"
 Converted["_AddCustomModule1"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_AddCustomModule1"].TextScaled = true
 Converted["_AddCustomModule1"].TextSize = 14
@@ -704,7 +704,7 @@ Converted["_UICorner13"].Parent = Converted["_Close"]
 Converted["_UIStroke9"].Parent = Converted["_Close"]
 
 Converted["_HubCredits"].Font = Enum.Font.GothamBold
-Converted["_HubCredits"].Text = "由Imperial制造和开放"
+Converted["_HubCredits"].Text = "made and open sourced by imperial"
 Converted["_HubCredits"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubCredits"].TextScaled = true
 Converted["_HubCredits"].TextSize = 14
@@ -722,7 +722,7 @@ Converted["_HubCredits"].Name = "HubCredits"
 Converted["_HubCredits"].Parent = Converted["_Menu"]
 
 Converted["_HubDesc"].Font = Enum.Font.GothamBold
-Converted["_HubDesc"].Text = "又一个随机的集线器菜单"
+Converted["_HubDesc"].Text = "yet another random hub menu"
 Converted["_HubDesc"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubDesc"].TextSize = 14
 Converted["_HubDesc"].TextWrapped = true
@@ -738,7 +738,7 @@ Converted["_HubDesc"].Name = "HubDesc"
 Converted["_HubDesc"].Parent = Converted["_Menu"]
 
 Converted["_HubName"].Font = Enum.Font.GothamBold
-Converted["_HubName"].Text = "xgo汉化"
+Converted["_HubName"].Text = "YARHM"
 Converted["_HubName"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubName"].TextScaled = true
 Converted["_HubName"].TextSize = 14
@@ -792,7 +792,7 @@ Converted["_Opener"].Name = "Opener"
 Converted["_Opener"].Parent = Converted["_CanvasGroup"]
 
 Converted["_TextLabel5"].Font = Enum.Font.GothamBold
-Converted["_TextLabel5"].Text = "又一个随机的集线器菜单"
+Converted["_TextLabel5"].Text = "Yet Another Random Hub Menu"
 Converted["_TextLabel5"].TextColor3 = Color3.fromRGB(255, 69.00000348687172, 67.00000360608101)
 Converted["_TextLabel5"].TextScaled = true
 Converted["_TextLabel5"].TextSize = 14
@@ -832,7 +832,7 @@ Converted["_Area1"].Name = "Area"
 Converted["_Area1"].Parent = Converted["_Area"]
 
 Converted["_TextLabel6"].Font = Enum.Font.GothamBold
-Converted["_TextLabel6"].Text = "又一个随机的集线器菜单"
+Converted["_TextLabel6"].Text = "yet another random hub menu"
 Converted["_TextLabel6"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel6"].TextSize = 14
 Converted["_TextLabel6"].AnchorPoint = Vector2.new(0.5, 0.5)
@@ -845,7 +845,7 @@ Converted["_TextLabel6"].Size = UDim2.new(0, 200, 0, 50)
 Converted["_TextLabel6"].Parent = Converted["_Area1"]
 
 Converted["_TextLabel7"].Font = Enum.Font.GothamBold
-Converted["_TextLabel7"].Text = "xgo"
+Converted["_TextLabel7"].Text = "YARHM"
 Converted["_TextLabel7"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel7"].TextScaled = true
 Converted["_TextLabel7"].TextSize = 14
@@ -890,7 +890,7 @@ Converted["_UICorner15"].CornerRadius = UDim.new(0, 9999)
 Converted["_UICorner15"].Parent = Converted["_Frame"]
 
 Converted["_TextLabel8"].Font = Enum.Font.Gotham
-Converted["_TextLabel8"].Text = "点按此处以最小化."
+Converted["_TextLabel8"].Text = "Tap here to minimize."
 Converted["_TextLabel8"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel8"].TextSize = 15
 Converted["_TextLabel8"].TextWrapped = true
@@ -918,7 +918,7 @@ Converted["_Toggle"].Name = "Toggle"
 Converted["_Toggle"].Parent = Converted["_YARHM"]
 
 Converted["_TextLabel9"].Font = Enum.Font.Unknown
-Converted["_TextLabel9"].Text = "循环走路拍摄和FOV（广角）"
+Converted["_TextLabel9"].Text = "Loop walkspeed and FOV"
 Converted["_TextLabel9"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel9"].TextScaled = true
 Converted["_TextLabel9"].TextSize = 14
@@ -1034,7 +1034,7 @@ Converted["_UIListLayout4"].SortOrder = Enum.SortOrder.LayoutOrder
 Converted["_UIListLayout4"].Parent = Converted["_ScrollingFrame1"]
 
 Converted["_Sample"].Font = Enum.Font.Unknown
-Converted["_Sample"].Text = "这可能适合大量文本."
+Converted["_Sample"].Text = "This can fit a lot of text, probably."
 Converted["_Sample"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Sample"].TextScaled = true
 Converted["_Sample"].TextSize = 14
@@ -1071,7 +1071,7 @@ Converted["_Range"].Name = "Range"
 Converted["_Range"].Parent = Converted["_YARHM"]
 
 Converted["_TextLabel10"].Font = Enum.Font.Unknown
-Converted["_TextLabel10"].Text = "我给了多少####"
+Converted["_TextLabel10"].Text = "How many #### I give"
 Converted["_TextLabel10"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel10"].TextScaled = true
 Converted["_TextLabel10"].TextSize = 14
@@ -1340,7 +1340,6 @@ Converted["_UIStroke14"].Parent = Converted["_Close1"]
 
 Converted["_UIScale3"].Scale = 0.800000011920929
 Converted["_UIScale3"].Parent = Converted["_NotificationSample"]
-
 -- Fake Module Scripts:
 
 local fake_module_scripts = {}
