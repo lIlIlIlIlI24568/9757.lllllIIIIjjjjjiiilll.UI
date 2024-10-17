@@ -3,8 +3,8 @@
 
 if not game:IsLoaded() then
 	game:GetService("StarterGui"):SetCore("SendNotification", {
-		Title = "Script loading",
-		Text = "Waiting for the game to finish loading!",
+		Title = "脚本加载",
+		Text = "等待游戏完成加载！",
 		Duration = 5
 	})
 	game.Loaded:Wait()
