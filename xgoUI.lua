@@ -350,7 +350,7 @@ function NightLib:CreateWindow(Configs)
     NameHub.Position = UDim2.new(0, 0, 1.87165128e-07, 0)
     NameHub.Size = UDim2.new(1.00167501, 0, 0.0213322397, 40)
     NameHub.Font = Enum.Font.GothamBold
-    NameHub.Text = "" .. Configs.Title .. " By - " .. Configs.Cre .. ""
+    NameHub.Text = "" .. Configs.Title .. " XG - " .. Configs.Cre .. ""
     NameHub.TextColor3 = Color3.fromRGB(255, 255, 255)
     NameHub.TextSize = 14.000
     NameHub.TextXAlignment = Enum.TextXAlignment.Left
@@ -387,7 +387,7 @@ function NightLib:CreateWindow(Configs)
     LogoMiniSized.BorderSizePixel = 0
     LogoMiniSized.Position = UDim2.new(0.25, 0, 0.25, 0)
     LogoMiniSized.Size = UDim2.new(0, 20, 0, 20)
-    LogoMiniSized.Image = "rbxassetid://17585149799"
+    LogoMiniSized.Image = "rbxassetid://18923878915"
 
     CloseLib.Name = "Close Lib"
     CloseLib.Parent = Top
@@ -411,7 +411,7 @@ function NightLib:CreateWindow(Configs)
     LogoCLoseLib.BackgroundTransparency = 1.000
     LogoCLoseLib.Position = UDim2.new(0.174999997, 0, 0.174999997, 0)
     LogoCLoseLib.Size = UDim2.new(0, 25, 0, 25)
-    LogoCLoseLib.Image = "rbxassetid://2777727756"
+    LogoCLoseLib.Image = "rbxassetid://18923878915"
 
     TabHolder.Name = "Tab Holder"
     TabHolder.Parent = Main
