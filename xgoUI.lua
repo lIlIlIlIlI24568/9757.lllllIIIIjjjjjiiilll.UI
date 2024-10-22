@@ -312,7 +312,7 @@ function NightLib:CreateWindow(Configs)
     CloseOpen.BorderSizePixel = 0
     CloseOpen.Position = UDim2.new(0.00696864119, 0, 0.457489878, 0)
     CloseOpen.Size = UDim2.new(0, 35, 0, 35)
-    CloseOpen.Image = "rbxassetid://17717048927"
+    CloseOpen.Image = "rbxassetid://18923878915"
     CloseOpen.MouseButton1Click:Connect(function()
         if ReadyClose == true then
             TweenService:Create(Main, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 598, 0, 376)}):Play()
@@ -387,7 +387,7 @@ function NightLib:CreateWindow(Configs)
     LogoMiniSized.BorderSizePixel = 0
     LogoMiniSized.Position = UDim2.new(0.25, 0, 0.25, 0)
     LogoMiniSized.Size = UDim2.new(0, 20, 0, 20)
-    LogoMiniSized.Image = "rbxassetid://18923878915"
+    LogoMiniSized.Image = "rbxassetid://17585149799"--不是
 
     CloseLib.Name = "Close Lib"
     CloseLib.Parent = Top
@@ -411,7 +411,7 @@ function NightLib:CreateWindow(Configs)
     LogoCLoseLib.BackgroundTransparency = 1.000
     LogoCLoseLib.Position = UDim2.new(0.174999997, 0, 0.174999997, 0)
     LogoCLoseLib.Size = UDim2.new(0, 25, 0, 25)
-    LogoCLoseLib.Image = "rbxassetid://18923878915"
+    LogoCLoseLib.Image = "rbxassetid://2777727756"-- No
 
     TabHolder.Name = "Tab Holder"
     TabHolder.Parent = Main
