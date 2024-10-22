@@ -194,7 +194,7 @@ function NightLib:CreateWindow(Configs)
     Logo.BorderSizePixel = 0
     Logo.Position = UDim2.new(0.981549799, 0, 0.959514141, 0)
     Logo.Size = UDim2.new(0, 20, 0, 20)
-    Logo.Image = "rbxassetid://17717048927"
+    Logo.Image = "rbxassetid://18923878915"
 
     UICorner.CornerRadius = UDim.new(0, 4)
     UICorner.Parent = Logo
