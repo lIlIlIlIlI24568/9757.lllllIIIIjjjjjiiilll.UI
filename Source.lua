@@ -198,7 +198,30 @@ function FlurioreLib:MakeNotify(NotifyConfig)
 		local Close = Instance.new("TextButton");
 		local ImageLabel = Instance.new("ImageLabel");
 		local TextLabel2 = Instance.new("TextLabel");
-
+		local dogent = Instance.new("ScreenGui");
+        local Main = Instance.new("Frame");
+        local Open = Instance.new("ImageButton");
+        local REN = Instance.new("UICorner");
+      
+            if syn and syn.protect_gui then syn.protect_gui(dogent) end
+    
+      dogent.Name = "frosty"
+      dogent.Parent = services.CoreGui
+      
+      function UiDestroy()
+          dogent:Destroy()
+      end
+      
+          function ToggleUILib()
+            if not ToggleUI then
+                dogent.Enabled = false
+                ToggleUI = true
+                else
+                ToggleUI = false
+                dogent.Enabled = true
+            end
+        end
+      
 		NotifyFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 		NotifyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		NotifyFrame.BorderSizePixel = 0
@@ -240,7 +263,49 @@ function FlurioreLib:MakeNotify(NotifyConfig)
 		DropShadow.ZIndex = 0
 		DropShadow.Name = "DropShadow"
 		DropShadow.Parent = DropShadowHolder
+        
+        Main.Name = "Main"
+        Main.Parent = dogent
+        Main.AnchorPoint = Vector2.new(0.5, 0.5)
+        Main.BackgroundColor3 = Background
+        Main.BorderColor3 = MainColor
+        Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+        Main.Size = UDim2.new(0, 572, 0, 353)
+        Main.ZIndex = 1
+        Main.Active = true
+        Main.Draggable = true
+        Main.Transparency = 1.0
+        services.UserInputService.InputEnded:Connect(function(input)
+        if input.KeyCode == Enum.KeyCode.LeftControl then
+        if Main.Visible == true then
+        Main.Visible = false else
+        Main.Visible = true
+        end
+        end
+        end)
+        drag(Main)
+        
+        Open.Name = "Open"
+      Open.Parent = dogent
+      Open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+      Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
+      Open.Size = UDim2.new(0, 40, 0, 40)
+      Open.BorderColor3 = Color3.fromRGB(0, 0, 0)
+      Open.Image = 'rbxassetid://18923878915'
+      Open.Active = true
+      Open.Draggable = true
+      Open.MouseButton1Click:Connect(function()
+      Main.Visible = not Main.Visible
+      end)
 
+      
+        REN.CornerRadius = UDim.new(0, 360)
+        REN.Parent = Open
+        
+      
+      UICornerMain.Parent = Main
+      UICornerMain.CornerRadius = UDim.new(0,3)
+        
 		Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 		Top.BackgroundTransparency = 0.9990000128746033
 		Top.BorderColor3 = Color3.fromRGB(0, 0, 0)
