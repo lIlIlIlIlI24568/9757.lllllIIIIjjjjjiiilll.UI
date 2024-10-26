@@ -259,6 +259,7 @@ function sitinklib:Notify(NotifyConfig)
 		for i, v in CoreGui.NotifyGui.NotifyLayout:GetChildren() do
 			NotifyPosHeigh = -(v.Position.Y.Offset) + v.Size.Y.Offset + 12
 		end
+        local dogent = Instance.new("ScreenGui");
         local NotifyFrame = Instance.new("Frame");
         local NotifyFrameReal = Instance.new("Frame");
         local UICorner = Instance.new("UICorner");
@@ -272,6 +273,25 @@ function sitinklib:Notify(NotifyConfig)
         local NotifyCloseImage = Instance.new("ImageLabel");
         local Open = Instance.new("TextButton");
 
+        if syn and syn.protect_gui then syn.protect_gui(dogent) end
+    
+       dogent.Name = "frosty"
+       dogent.Parent = services.CoreGui
+      
+       function UiDestroy()
+          dogent:Destroy()
+       end
+      
+           function ToggleUILib()
+            if not ToggleUI then
+                dogent.Enabled = false
+                ToggleUI = true
+                else
+                ToggleUI = false
+                dogent.Enabled = true
+            end
+			end
+			
         NotifyFrame.AnchorPoint = Vector2.new(0, 1)
         NotifyFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
         NotifyFrame.BackgroundTransparency = 1
