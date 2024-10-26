@@ -605,6 +605,86 @@ function sitinklib:Start(GuiConfig)
     UIListLayout.Parent = ScrollTab
 
     AutoUp(ScrollTab)
+    MakeDraggable(Top, Main)
+	function WazureV1:CloseUI()
+		AzuGui:Destroy()
+	end
+	function WazureV1:ToggleUI()
+		Main.Visible = not Main.Visible
+	end
+		if not GuiConfig["Custom Toggle"] then
+		local ToggleOpen = Instance.new("Frame");
+		local OpenButton = Instance.new("TextButton");
+		local UICorner42 = Instance.new("UICorner");
+		local DropShadowHolder1 = Instance.new("Frame");
+		local DropShadow1 = Instance.new("ImageLabel");
+		local UIStroke19 = Instance.new("UIStroke");
+
+		ToggleOpen.AnchorPoint = Vector2.new(0, 0.5)
+		ToggleOpen.BackgroundColor3 = Color3.fromRGB(30.00000011175871, 30.00000011175871, 30.00000011175871)
+		ToggleOpen.BackgroundTransparency = 0.10000000149011612
+		ToggleOpen.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		ToggleOpen.BorderSizePixel = 0
+		ToggleOpen.Position = UDim2.new(0, Main.Position.X.Offset - 50, 0.5, 0)
+		ToggleOpen.Size = UDim2.new(0, 50, 0, 50)
+		ToggleOpen.Name = "ToggleOpen"
+		ToggleOpen.Visible = false
+		ToggleOpen.Parent = AzuGui
+		
+		OpenButton.Font = Enum.Font.IndieFlower
+		OpenButton.Text = "Open"
+		OpenButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		OpenButton.TextSize = 30
+		OpenButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		OpenButton.BackgroundTransparency = 0.9990000128746033
+		OpenButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		OpenButton.BorderSizePixel = 0
+		OpenButton.Size = UDim2.new(1, 0, 1, 0)
+		OpenButton.Name = "OpenButton"
+		OpenButton.Parent = ToggleOpen
+		
+		UICorner42.CornerRadius = UDim.new(0, 5)
+		UICorner42.Parent = ToggleOpen
+		
+		DropShadowHolder1.BackgroundTransparency = 1
+		DropShadowHolder1.BorderSizePixel = 0
+		DropShadowHolder1.Size = UDim2.new(1, 0, 1, 0)
+		DropShadowHolder1.ZIndex = 0
+		DropShadowHolder1.Name = "DropShadowHolder"
+		DropShadowHolder1.Parent = ToggleOpen
+		
+		DropShadow1.Image = "rbxassetid://6015897843"
+		DropShadow1.ImageColor3 = Color3.fromRGB(0, 0, 0)
+		DropShadow1.ImageTransparency = 0.5
+		DropShadow1.ScaleType = Enum.ScaleType.Slice
+		DropShadow1.SliceCenter = Rect.new(49, 49, 450, 450)
+		DropShadow1.AnchorPoint = Vector2.new(0.5, 0.5)
+		DropShadow1.BackgroundTransparency = 1
+		DropShadow1.BorderSizePixel = 0
+		DropShadow1.Position = UDim2.new(0.5, 0, 0.5, 0)
+		DropShadow1.Size = UDim2.new(1, 30, 1, 30)
+		DropShadow1.ZIndex = 0
+		DropShadow1.Name = "DropShadow"
+		DropShadow1.Parent = DropShadowHolder1
+		
+		UIStroke19.Color = Color3.fromRGB(50.000000819563866, 50.000000819563866, 50.000000819563866)
+		UIStroke19.Thickness = 2
+		UIStroke19.Parent = ToggleOpen
+		
+		HideButton.Activated:Connect(function()
+			ToggleOpen.Visible = true
+			WazureV1:ToggleUI()
+		end)
+		CloseButton.Activated:Connect(function()
+			ToggleOpen.Visible = true
+			WazureV1:ToggleUI()
+			GuiConfig.CloseCallBack()
+		end)
+		OpenButton.Activated:Connect(function()
+			ToggleOpen.Visible = false
+			WazureV1:ToggleUI()
+		end)
+	end
     --// Info
     local Info = Instance.new("Frame");
     local UICorner5 = Instance.new("UICorner");
