@@ -259,7 +259,6 @@ function sitinklib:Notify(NotifyConfig)
 		for i, v in CoreGui.NotifyGui.NotifyLayout:GetChildren() do
 			NotifyPosHeigh = -(v.Position.Y.Offset) + v.Size.Y.Offset + 12
 		end
-        local dogent = Instance.new("ScreenGui");
         local NotifyFrame = Instance.new("Frame");
         local NotifyFrameReal = Instance.new("Frame");
         local UICorner = Instance.new("UICorner");
@@ -271,27 +270,7 @@ function sitinklib:Notify(NotifyConfig)
         local NotifyDescription = Instance.new("TextLabel");
         local NotifyClose = Instance.new("TextButton");
         local NotifyCloseImage = Instance.new("ImageLabel");
-        local Open = Instance.new("TextButton");
 
-        if syn and syn.protect_gui then syn.protect_gui(dogent) end
-    
-       dogent.Name = "frosty"
-       dogent.Parent = services.CoreGui
-      
-       function UiDestroy()
-          dogent:Destroy()
-       end
-      
-           function ToggleUILib()
-            if not ToggleUI then
-                dogent.Enabled = false
-                ToggleUI = true
-                else
-                ToggleUI = false
-                dogent.Enabled = true
-            end
-			end
-			
         NotifyFrame.AnchorPoint = Vector2.new(0, 1)
         NotifyFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
         NotifyFrame.BackgroundTransparency = 1
@@ -410,21 +389,16 @@ function sitinklib:Notify(NotifyConfig)
         NotifyCloseImage.Name = "NotifyCloseImage"
         NotifyCloseImage.Parent = NotifyClose
         
-        Open.Name = "Open"
-        Open.Parent = dogent
-        Open.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-        Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
-        Open.Size = UDim2.new(0, 61, 0, 32)
-        Open.Font = Enum.Font.SourceSans
-        Open.Text = "隐藏/打开"
-        Open.TextColor3 = Color3.fromRGB(255, 255, 255)
-        Open.TextSize = 14.000
-        Open.Active = true
-        Open.Draggable = true
-        Open.MouseButton1Click:Connect(function()
-        Main.Visible = not Main.Visible
-        end)
-        UIG.Parent = Open
+        local Open = true
+	    ToggleButton.MouseButton1Down:Connect(function()
+		if Open == false then
+			Open = true
+			ShadowHolder1.Visible = true
+		else
+			Open = false
+			ShadowHolder1.Visible = false
+		 end
+	    end)
 
         NotifyContent.Size = UDim2.new(1, -24, 0, 13 + (13 * (NotifyContent.TextBounds.X // NotifyContent.AbsoluteSize.X)))
 		NotifyContent.TextWrapped = true
