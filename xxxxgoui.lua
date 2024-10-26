@@ -1779,6 +1779,7 @@ function sitinklib:Start(GuiConfig)
 
                 local Slider = Instance.new("Frame");
                 local UICorner25 = Instance.new("UICorner");
+                local TextButton4 = Instance.new("TextButton");
                 local SliderContent = Instance.new("TextLabel");
                 local SliderTitle = Instance.new("TextLabel");
                 local SliderFrame = Instance.new("Frame");
@@ -1879,6 +1880,19 @@ function sitinklib:Start(GuiConfig)
                 SliderFrDrag.Name = "SliderFrDrag"
                 SliderFrDrag.Parent = SliderFrame
 
+                TextButton4.Font = Enum.Font.GothamBold
+			TextButton4.Text = ""
+			TextButton4.TextColor3 = Color3.fromRGB(230.00000149011612, 230.00000149011612, 230.00000149011612)
+			TextButton4.TextSize = 13
+			TextButton4.TextXAlignment = Enum.TextXAlignment.Left
+			TextButton4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+			TextButton4.BackgroundTransparency = 0.9990000128746033
+			TextButton4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			TextButton4.BorderSizePixel = 0
+			TextButton4.Size = UDim2.new(1, 0, 1, 0)
+			TextButton4.Parent = TopDrop
+		
+
                 SliderNumber.Font = Enum.Font.GothamBold
                 SliderNumber.Text = "0"
                 SliderNumber.TextColor3 = Color3.fromRGB(230.00000149011612, 230.00000149011612, 230.00000149011612)
@@ -1895,6 +1909,41 @@ function sitinklib:Start(GuiConfig)
                 SliderNumber.Parent = Slider
 
                 local Dragging = false
+			    local Open = false
+
+			TextButton4.MouseButton1Down:Connect(function()
+				CircleClick(TextButton4, Mouse.X, Mouse.Y) 
+				if Open == false then
+					Open = true
+					TweenService:Create(
+						Dropdown,
+						TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+						{Size = UDim2.new(1, 0, 0, 110)}
+					):Play()
+					TweenService:Create(
+						Dropdown.TopDrop.FeatureFrame.FeatureImg,
+						TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+						{ImageColor3 = Color3.fromRGB(32, 140, 255)}
+					):Play()
+					task.wait(0.2)
+					Dropdown.UnderDrop.Visible = true
+				else
+					Open = false
+					TweenService:Create(
+						Dropdown,
+						TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+						{Size = UDim2.new(1, 0, 0, 55)}
+					):Play()
+					TweenService:Create(
+						Dropdown.TopDrop.FeatureFrame.FeatureImg,
+						TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+						{ImageColor3 = Color3.fromRGB(0, 0, 0)}
+					):Play()
+					Dropdown.UnderDrop.Visible = false
+				end
+				task.wait(0.3)
+				UpdateCanvaSize2()
+			end)
                 local function Round(Number, Factor)
                     local Result = math.floor(Number/Factor + (math.sign(Number) * 0.5)) * Factor
                     if Result < 0 then 
