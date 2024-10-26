@@ -286,18 +286,21 @@ function FlurioreLib:MakeNotify(NotifyConfig)
         drag(Main)
         
         Open.Name = "Open"
-      Open.Parent = dogent
-      Open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-      Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
-      Open.Size = UDim2.new(0, 40, 0, 40)
-      Open.BorderColor3 = Color3.fromRGB(0, 0, 0)
-      Open.Image = 'rbxassetid://18923878915'
-      Open.Active = true
-      Open.Draggable = true
-      Open.MouseButton1Click:Connect(function()
-      Main.Visible = not Main.Visible
-      end)
-
+        Open.Parent = dogent
+        Open.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+        Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
+        Open.Size = UDim2.new(0, 61, 0, 32)
+        Open.Font = Enum.Font.SourceSans
+        Open.Text = "关闭/打开"
+        Open.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Open.TextSize = 14.000
+        Open.Active = true
+        Open.Draggable = true
+        Open.MouseButton1Click:Connect(function()
+        Main.Visible = not Main.Visible
+        Open.Text=Main.Visible and "隐藏" or "打开"
+        end)
+        UIG.Parent = Open
       
         REN.CornerRadius = UDim.new(0, 360)
         REN.Parent = Open
