@@ -304,7 +304,7 @@ end
 local SpeedHubLib = {}
 function SpeedHubLib:Notify(NotifyConfig)
     local NotifyConfig = NotifyConfig or {}
-    NotifyConfig.Title = NotifyConfig.Title or "Speed Hub"
+    NotifyConfig.Title = NotifyConfig.Title or "xgo Hub"
     NotifyConfig.Description = NotifyConfig.Description or ""
     NotifyConfig.Content = NotifyConfig.Content or ""
 	NotifyConfig["Color"] = NotifyConfig["Color"] or Color3.fromRGB(127.00000002980232, 146.00000649690628, 242.00000077486038)
@@ -523,7 +523,7 @@ end
 
 function SpeedHubLib:Start(GuiConfig)
     local GuiConfig = GuiConfig or {}
-    GuiConfig.Name = GuiConfig.Name or "Speed Hub"
+    GuiConfig.Name = GuiConfig.Name or "xgo Hub"
     GuiConfig.Description = GuiConfig.Description or ""
     GuiConfig["Info Color"] = GuiConfig["Info Color"] or Color3.fromRGB(224, 7, 43)
     GuiConfig["Logo Info"] = GuiConfig["Logo Info"] or "https://www.roblox.com/headshot-thumbnail/image?userId=".. game:GetService("Players").LocalPlayer.UserId .."&width=420&height=420&format=png"
@@ -582,7 +582,7 @@ function SpeedHubLib:Start(GuiConfig)
     local UICornerMinimize = Instance.new("UICorner")
 
     SpeedGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    SpeedGui.Name = "SpeedGui"
+    SpeedGui.Name = "xgoGui"
     SpeedGui.Parent = CoreGui
 
     local ScreenFind = CoreGui:FindFirstChild(SpeedGui.Name)
@@ -704,7 +704,7 @@ function SpeedHubLib:Start(GuiConfig)
     MinimizeButton.Size = UDim2.fromOffset(35, 35)
     MinimizeButton.Position = UDim2.fromScale(0.10, 0.30)
     MinimizeButton.BackgroundTransparency = 1
-    MinimizeButton.Image = "rbxassetid://16022917595"
+    MinimizeButton.Image = "rbxassetid://18923878915"  --按钮头像
     MinimizeButton.BackgroundColor3 = GuiConfig["Color"]
     MinimizeButton.AutoButtonColor = false
     MinimizeButton.Draggable = true
