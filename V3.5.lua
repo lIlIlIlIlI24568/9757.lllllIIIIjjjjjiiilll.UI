@@ -137,7 +137,7 @@ local function MakeDraggable(topbarobject, object)
 		local changesizeobject = Instance.new("Frame");
 
 		changesizeobject.AnchorPoint = Vector2.new(1, 1)
-		changesizeobject.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		changesizeobject.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
 		changesizeobject.BackgroundTransparency = 0.9990000128746033
 		changesizeobject.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		changesizeobject.BorderSizePixel = 0
@@ -193,7 +193,7 @@ ClickGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ClickGui.Name = "ClickGui"
 ClickGui.Parent = CoreGui
 
-ClickFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ClickFrame.BackgroundColor3 = Color3.fromRGB(255, 192, 203)
 ClickFrame.BackgroundTransparency = 0.9990000128746033
 ClickFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ClickFrame.BorderSizePixel = 0
@@ -206,9 +206,9 @@ function CircleClick(ClickFrame, X, Y)
 	spawn(function()
 		local Circle = Instance.new("ImageLabel")
 		Circle.Image = "rbxassetid://266543268"
-		Circle.ImageColor3 = Color3.fromRGB(255, 255, 255)
+		Circle.ImageColor3 = Color3.fromRGB(135, 206, 250)
 		Circle.ImageTransparency = 0.8
-		Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Circle.BackgroundColor3 = Color3.fromRGB(255, 192, 203)
 		Circle.BackgroundTransparency = 1
 		Circle.ZIndex = 10
 		Circle.Name = "Circle"
@@ -267,7 +267,7 @@ end
 local function EnterMouse(frameenter)
     local old = frameenter.BackgroundColor3
     local oldfunc = {}
-    if old == Color3.fromRGB(255, 255, 255) then
+    if old == Color3.fromRGB(135, 206, 250) then
         local oldtrans = frameenter.BackgroundTransparency
         frameenter.MouseEnter:Connect(function()
             TweenService:Create(
@@ -307,7 +307,7 @@ function SpeedHubLib:Notify(NotifyConfig)
     NotifyConfig.Title = NotifyConfig.Title or "xgo Hub"
     NotifyConfig.Description = NotifyConfig.Description or ""
     NotifyConfig.Content = NotifyConfig.Content or ""
-	NotifyConfig["Color"] = NotifyConfig["Color"] or Color3.fromRGB(127.00000002980232, 146.00000649690628, 242.00000077486038)
+	NotifyConfig["Color"] = NotifyConfig["Color"] or Color3.fromRGB(135, 206, 250)
 	NotifyConfig.Time = NotifyConfig.Time or 0.5
 	NotifyConfig.Delay = NotifyConfig.Delay or 5
 	local NotifyFunc = {}
@@ -322,7 +322,7 @@ function SpeedHubLib:Notify(NotifyConfig)
             local NotifyLayout = Instance.new("Frame");
 
             NotifyLayout.AnchorPoint = Vector2.new(1, 1)
-            NotifyLayout.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            NotifyLayout.BackgroundColor3 = Color3.fromRGB(255, 192, 203)
             NotifyLayout.BackgroundTransparency = 0.9990000128746033
             NotifyLayout.BorderColor3 = Color3.fromRGB(0, 0, 0)
             NotifyLayout.BorderSizePixel = 0
@@ -370,7 +370,7 @@ function SpeedHubLib:Notify(NotifyConfig)
         NotifyFrame.Name = "NotifyFrame"
         NotifyFrame.Parent = CoreGui.NotifyGui.NotifyLayout
 
-        NotifyFrameReal.BackgroundColor3 = Color3.fromRGB(45.00000111758709, 45.00000111758709, 45.00000111758709)
+        NotifyFrameReal.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
         NotifyFrameReal.BorderColor3 = Color3.fromRGB(0, 0, 0)
         NotifyFrameReal.BorderSizePixel = 0
         NotifyFrameReal.Position = UDim2.new(0, 330, 0, 0)
@@ -389,7 +389,7 @@ function SpeedHubLib:Notify(NotifyConfig)
         DropShadowHolder.Parent = NotifyFrameReal
 
         DropShadow.Image = "rbxassetid://6015897843"
-        DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+        DropShadow.ImageColor3 = Color3.fromRGB(255, 192, 203)
         DropShadow.ImageTransparency = 0.5
         DropShadow.ScaleType = Enum.ScaleType.Slice
         DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
@@ -404,11 +404,11 @@ function SpeedHubLib:Notify(NotifyConfig)
 
         NotifyContent.Font = Enum.Font.GothamBold
         NotifyContent.Text = NotifyConfig.Content
-        NotifyContent.TextColor3 = Color3.fromRGB(140.00000685453415, 140.00000685453415, 140.00000685453415)
+        NotifyContent.TextColor3 = Color3.fromRGB(255, 192, 203)
         NotifyContent.TextSize = 13
         NotifyContent.TextXAlignment = Enum.TextXAlignment.Left
         NotifyContent.TextYAlignment = Enum.TextYAlignment.Top
-        NotifyContent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        NotifyContent.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
         NotifyContent.BackgroundTransparency = 0.9990000128746033
         NotifyContent.BorderColor3 = Color3.fromRGB(0, 0, 0)
         NotifyContent.BorderSizePixel = 0
@@ -417,7 +417,7 @@ function SpeedHubLib:Notify(NotifyConfig)
         NotifyContent.Name = "NotifyContent"
         NotifyContent.Parent = NotifyFrameReal
 
-        Top.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Top.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
         Top.BackgroundTransparency = 0.9990000128746033
         Top.BorderColor3 = Color3.fromRGB(0, 0, 0)
         Top.BorderSizePixel = 0
@@ -430,7 +430,7 @@ function SpeedHubLib:Notify(NotifyConfig)
         NotifyTitle.TextColor3 = NotifyConfig.Color
         NotifyTitle.TextSize = 14
         NotifyTitle.TextXAlignment = Enum.TextXAlignment.Left
-        NotifyTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        NotifyTitle.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
         NotifyTitle.BackgroundTransparency = 0.9990000128746033
         NotifyTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
         NotifyTitle.BorderSizePixel = 0
@@ -441,12 +441,12 @@ function SpeedHubLib:Notify(NotifyConfig)
 
         NotifyDescription.Font = Enum.Font.GothamBold
         NotifyDescription.Text = NotifyConfig.Description
-        NotifyDescription.TextColor3 = Color3.fromRGB(230.00000149011612, 230.00000149011612, 230.00000149011612)
+        NotifyDescription.TextColor3 = Color3.fromRGB(255, 192, 203)
         NotifyDescription.TextSize = 14
         NotifyDescription.TextXAlignment = Enum.TextXAlignment.Left
-        NotifyDescription.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        NotifyDescription.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
         NotifyDescription.BackgroundTransparency = 0.9990000128746033
-        NotifyDescription.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        NotifyDescription.BorderColor3 = Color3.fromRGB(255, 192, 203)
         NotifyDescription.BorderSizePixel = 0
         NotifyDescription.Position = UDim2.new(0, 16 + NotifyTitle.TextBounds.X, 0, 10)
         NotifyDescription.Size = UDim2.new(0, 0, 0, 14)
@@ -458,7 +458,7 @@ function SpeedHubLib:Notify(NotifyConfig)
         NotifyClose.TextColor3 = Color3.fromRGB(0, 0, 0)
         NotifyClose.TextSize = 14
         NotifyClose.AnchorPoint = Vector2.new(1, 0)
-        NotifyClose.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        NotifyClose.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
         NotifyClose.BackgroundTransparency = 0.9990000128746033
         NotifyClose.BorderColor3 = Color3.fromRGB(0, 0, 0)
         NotifyClose.BorderSizePixel = 0
@@ -469,7 +469,7 @@ function SpeedHubLib:Notify(NotifyConfig)
 
         NotifyCloseImage.Image = "rbxassetid://18328658828"
         NotifyCloseImage.AnchorPoint = Vector2.new(0.5, 0.5)
-        NotifyCloseImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        NotifyCloseImage.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
         NotifyCloseImage.BackgroundTransparency = 0.9990000128746033
         NotifyCloseImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
         NotifyCloseImage.BorderSizePixel = 0
@@ -591,7 +591,7 @@ function SpeedHubLib:Start(GuiConfig)
     end
     
     Main.AnchorPoint = Vector2.new(0, 0)
-    Main.BackgroundColor3 = Color3.fromRGB(45.00000111758709, 45.00000111758709, 45.00000111758709)
+    Main.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
     Main.BackgroundTransparency = 0
     Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Main.BorderSizePixel = 0
@@ -603,7 +603,7 @@ function SpeedHubLib:Start(GuiConfig)
     UICorner.CornerRadius = UDim.new(0, 5)
     UICorner.Parent = Main
 
-    Top.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Top.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
     Top.BackgroundTransparency = 0.9990000128746033
     Top.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Top.BorderSizePixel = 0
@@ -616,7 +616,7 @@ function SpeedHubLib:Start(GuiConfig)
     TopTitle.TextColor3 = GuiConfig.Color
     TopTitle.TextSize = 14
     TopTitle.TextXAlignment = Enum.TextXAlignment.Left
-    TopTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TopTitle.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
     TopTitle.BackgroundTransparency = 0.9990000128746033
     TopTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
     TopTitle.BorderSizePixel = 0
@@ -627,10 +627,10 @@ function SpeedHubLib:Start(GuiConfig)
 
     TopDescription.Font = Enum.Font.GothamBold
     TopDescription.Text = GuiConfig.Description
-    TopDescription.TextColor3 = Color3.fromRGB(230.00000149011612, 230.00000149011612, 230.00000149011612)
+    TopDescription.TextColor3 = Color3.fromRGB(255, 192, 203)
     TopDescription.TextSize = 14
     TopDescription.TextXAlignment = Enum.TextXAlignment.Left
-    TopDescription.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TopDescription.BackgroundColor3 = Color3.fromRGB(255, 192, 203)
     TopDescription.BackgroundTransparency = 0.9990000128746033
     TopDescription.BorderColor3 = Color3.fromRGB(0, 0, 0)
     TopDescription.BorderSizePixel = 0
@@ -644,7 +644,7 @@ function SpeedHubLib:Start(GuiConfig)
     CloseButton.TextColor3 = Color3.fromRGB(0, 0, 0)
     CloseButton.TextSize = 14
     CloseButton.AnchorPoint = Vector2.new(1, 0)
-    CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    CloseButton.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
     CloseButton.BackgroundTransparency = 0.9990000128746033
     CloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
     CloseButton.BorderSizePixel = 0
@@ -655,7 +655,7 @@ function SpeedHubLib:Start(GuiConfig)
 
     CloseImage.Image = "rbxassetid://18328658828"
     CloseImage.AnchorPoint = Vector2.new(0.5, 0.5)
-    CloseImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    CloseImage.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
     CloseImage.BackgroundTransparency = 0.9990000128746033
     CloseImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
     CloseImage.BorderSizePixel = 0
@@ -672,7 +672,7 @@ function SpeedHubLib:Start(GuiConfig)
     DropShadowHolder.Parent = Main
 
     DropShadow.Image = "rbxassetid://6015897843"
-    DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+    DropShadow.ImageColor3 = Color3.fromRGB(255, 192, 203)
     DropShadow.ImageTransparency = 0.6000000238418579
     DropShadow.ScaleType = Enum.ScaleType.Slice
     DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
@@ -722,7 +722,7 @@ function SpeedHubLib:Start(GuiConfig)
     local ScrollTab = Instance.new("ScrollingFrame");
     local UIListLayout = Instance.new("UIListLayout");
 
-    LayersTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    LayersTab.BackgroundColor3 = Color3.fromRGB(255, 192, 203)
     LayersTab.BackgroundTransparency = 0.9990000128746033
     LayersTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
     LayersTab.BorderSizePixel = 0
@@ -735,7 +735,7 @@ function SpeedHubLib:Start(GuiConfig)
     ScrollTab.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
     ScrollTab.ScrollBarThickness = 0
     ScrollTab.Active = true
-    ScrollTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    ScrollTab.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
     ScrollTab.BackgroundTransparency = 0.9990000128746033
     ScrollTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
     ScrollTab.BorderSizePixel = 0
@@ -759,7 +759,7 @@ function SpeedHubLib:Start(GuiConfig)
     local UICorner7 = Instance.new("UICorner");
     local InfoButton = Instance.new("TextButton");
 
-    Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Info.BackgroundColor3 = Color3.fromRGB(255, 192, 203)
     Info.BackgroundTransparency = 0.9990000128746033
     Info.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Info.BorderSizePixel = 0
@@ -778,7 +778,7 @@ function SpeedHubLib:Start(GuiConfig)
     NamePlayer.TextSize = 12
     NamePlayer.TextWrapped = true
     NamePlayer.TextXAlignment = Enum.TextXAlignment.Left
-    NamePlayer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    NamePlayer.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
     NamePlayer.BackgroundTransparency = 0.9990000128746033
     NamePlayer.BorderColor3 = Color3.fromRGB(0, 0, 0)
     NamePlayer.BorderSizePixel = 0
@@ -788,7 +788,7 @@ function SpeedHubLib:Start(GuiConfig)
     NamePlayer.Parent = Info
 
     LogoFrame.AnchorPoint = Vector2.new(0, 0.5)
-    LogoFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    LogoFrame.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
     LogoFrame.BackgroundTransparency = 0.9990000128746033
     LogoFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
     LogoFrame.BorderSizePixel = 0
@@ -799,7 +799,7 @@ function SpeedHubLib:Start(GuiConfig)
 
     LogoPlayer.Image = GuiConfig["Logo Info"]
     LogoPlayer.AnchorPoint = Vector2.new(0.5, 0.5)
-    LogoPlayer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    LogoPlayer.BackgroundColor3 = Color3.fromRGB(255, 192, 203)
     LogoPlayer.BackgroundTransparency = 0.9990000128746033
     LogoPlayer.BorderColor3 = Color3.fromRGB(0, 0, 0)
     LogoPlayer.BorderSizePixel = 0
@@ -818,7 +818,7 @@ function SpeedHubLib:Start(GuiConfig)
     InfoButton.Text = ""
     InfoButton.TextColor3 = Color3.fromRGB(0, 0, 0)
     InfoButton.TextSize = 14
-    InfoButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    InfoButton.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
     InfoButton.BackgroundTransparency = 0.9990000128746033
     InfoButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
     InfoButton.BorderSizePixel = 0
@@ -839,9 +839,9 @@ function SpeedHubLib:Start(GuiConfig)
     local UICorner33 = Instance.new("UICorner");
     local UIStroke5 = Instance.new("UIStroke");
 
-    AnotherFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    AnotherFrame.BackgroundColor3 = Color3.fromRGB(255, 192, 203)
     AnotherFrame.BackgroundTransparency = 0.5
-    AnotherFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    AnotherFrame.BorderColor3 = Color3.fromRGB(135, 206, 250)
     AnotherFrame.BorderSizePixel = 0
     AnotherFrame.Size = UDim2.new(1, 0, 1, 0)
     AnotherFrame.Visible = false
@@ -856,7 +856,7 @@ function SpeedHubLib:Start(GuiConfig)
     AnotherButton.Text = ""
     AnotherButton.TextColor3 = Color3.fromRGB(0, 0, 0)
     AnotherButton.TextSize = 14
-    AnotherButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    AnotherButton.BackgroundColor3 = Color3.fromRGB(255, 192, 203)
     AnotherButton.BackgroundTransparency = 0.9990000128746033
     AnotherButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
     AnotherButton.BorderSizePixel = 0
