@@ -2638,7 +2638,7 @@ local function createScript(result)
 			newScript.Tags.Review.BackgroundColor3 = (likes > dislikes) and Color3.fromRGB(0, 139, 102) or Color3.fromRGB(180, 0, 0)
 			newScript.Tags.Review.Size = (likes > dislikes) and UDim2.new(0, 145, 1, 0) or UDim2.new(0, 150, 1, 0)
 		elseif likes > 0 then
-			newScript.Tags.Review.Title.Text = "Mixed Reviews"
+			newScript.Tags.Review.Title.Text = "混合评论"
 			newScript.Tags.Review.BackgroundColor3 = Color3.fromRGB(198, 132, 0)
 			newScript.Tags.Review.Size = UDim2.new(0, 130, 1, 0)
 		else
@@ -2676,7 +2676,7 @@ local function createScript(result)
 	newScript.Tags.Patched.Visible = result.isPatched or false
 
 	newScript.Execute.MouseButton1Click:Connect(function()
-		queueNotification("ScriptSearch", "Running "..result.title.. " via ScriptSearch" , 4384403532)
+		queueNotification("脚本搜索","运行 "..result.title.. " 通过脚本搜索" , 4384403532)
 		closeScriptSearch()
 		loadstring(result.script)()
 	end)
@@ -2738,7 +2738,7 @@ local function securityDetection(title, content, link, gradient, actions)
 		newAction.Text = action[1]
 		newAction.Parent = newSecurityPrompt.Buttons
 		newAction.Visible = true
-		newAction.Size = UDim2.new(0, newAction.TextBounds.X + 50, 0, 36) -- textbounds
+		newAction.Size = UDim2.new(0, newAction.TextBounds.X + 50, 0, 36) -- 文本界限
 
 		newAction.MouseButton1Click:Connect(function()
 			if action[2] then
@@ -2794,8 +2794,8 @@ end
 if Essential or Pro then
 	getgenv()[index] = function(data)
 		if checkSirius() and checkSetting("Intelligent HTTP Interception").current then
-			local title = "Do you trust this source?"
-			local content = "Sirius has prevented data from being sent off-client, would you like to allow data to be sent or retrieved from this source?"
+			local title = "你相信这个来源吗?"
+			local content = "Sirius阻止了从客户端发送的数据,您是否需要从此来源发送或检索数据?"
 			local url = data.Url or "Unknown Link"
 			local gradient = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),ColorSequenceKeypoint.new(1, Color3.new(0.764706, 0.305882, 0.0941176))})
 			local actions = {{"Always Allow", true, true}, {"Allow just this once", true}, {"Don't Allow", false}}
@@ -2804,8 +2804,8 @@ if Essential or Pro then
 				local bodyDecoded = httpService:JSONDecode(data.Body)
 
 				if bodyDecoded.cmd == "INVITE_BROWSER" then
-					title = "Would you like to join this Discord server?"
-					content = "Sirius has prevented your Discord client from automatically joining this Discord server, would you like to continue and join, or block it?"
+					title = "你想加入这个discord服务器吗?"
+					content = "SIRIUS已阻止您的Discord客户端自动加入此Discord服务器,您是否需要继续并加入或阻止它？"
 					url = bodyDecoded.args and "discord.gg/"..bodyDecoded.args.code or "Unknown Invite"
 					gradient = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),ColorSequenceKeypoint.new(1, Color3.new(0.345098, 0.396078, 0.94902))})
 					actions = {{"Allow", true}, {"Don't Allow", false}}
@@ -2827,8 +2827,8 @@ if Essential or Pro then
 
 	getgenv()[indexSetClipboard] = function(data)
 		if checkSirius() and checkSetting("Intelligent Clipboard Interception").current then
-			local title = "Would you like to copy this to your clipboard?"
-			local content = "Sirius has prevented a script from setting the below text to your clipboard, would you like to allow this, or prevent it from copying?"
+			local title = "你想把它复制到你的剪贴板吗?"
+			local content = "Sirius阻止了一个脚本将下面的文本设置为剪贴板,您是否需要允许此操作,或阻止它复制？"
 			local url = data or "Unknown Clipboard"
 			local gradient = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),ColorSequenceKeypoint.new(1, Color3.new(0.776471, 0.611765, 0.529412))})
 			local actions = {{"Allow", true}, {"Don't Allow", false}}
@@ -2860,7 +2860,7 @@ local function searchScriptBlox(query)
 	end)
 
 	if not success then
-		queueNotification("ScriptSearch", "ScriptSearch backend encountered an error, try again later", 4384402990)
+		queueNotification("脚本搜索","脚本搜索后端遇到错误,稍后再试", 4384402990)
 		closeScriptSearch()
 		return
 	end
@@ -2909,7 +2909,7 @@ local function searchScriptBlox(query)
 			tweenService:Create(scriptSearch.List, TweenInfo.new(.3,Enum.EasingStyle.Quint),  {ScrollBarImageTransparency = 0}):Play()
 		end
 	else
-		queueNotification("ScriptSearch", "ScriptSearch backend encountered an error, try again later", 4384402990)
+		queueNotification("脚本搜索","脚本搜索后端遇到错误,稍后再试", 4384402990)
 		closeScriptSearch()
 		return
 	end
@@ -2920,7 +2920,7 @@ local function openSmartBar()
 
 	coreGui.RobloxGui.Backpack.Position = UDim2.new(0,0,0,0)
 
-	-- Set Values for frame properties
+	-- 设置帧属性的值
 	smartBar.BackgroundTransparency = 1
 	smartBar.Time.TextTransparency = 1
 	smartBar.UIStroke.Transparency = 1
