@@ -1612,7 +1612,7 @@ local function syncExperienceInformation()
 
 			gameDetectionPrompt.Layer.Run.MouseButton1Click:Connect(function()
 				closeGameDetection()
-				queueNotification("Running "..gameFound.name, "Now running Sirius' "..gameFound.name.." script, this may take a moment.", 4400701828)
+				queueNotification("运行 "..gameFound.name, "现在运行天狼星"..gameFound.name.." 脚本,这可能需要片刻.", 4400701828)
 				runScript(rawFile)
 
 			end)
@@ -1695,7 +1695,7 @@ local function sortActions()
 		end)
 
 		characterPanel.Interactions.Grid.MouseLeave:Connect(function()
-			characterPanel.Interactions.ActionsTitle.Text = "PLAYER ACTIONS"
+			characterPanel.Interactions.ActionsTitle.Text = "玩家动作"
 		end)
 
 		newAction.Interact.MouseButton1Click:Connect(function()
@@ -1736,7 +1736,7 @@ local function sortActions()
 			end)
 
 			if not success then
-				queueNotification("Action Error", "This action ('"..(action.name).."') had an error while running, please report this to the Sirius team at sirius.menu/discord", 4370336704)
+				queueNotification("动作错误","此操作 ('"..(action.name).."') 跑步时出错,请向Sirius.Menu/Discord的Sirius团队报告这一点", 4370336704)
 				action.enabled = false
 				newAction.Icon.Image = "rbxassetid://"..action.images[2]
 				tweenService:Create(newAction, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0.55}):Play()
@@ -1874,7 +1874,7 @@ local function closePanel(panelName, openingOther)
 	local panelSize = UDim2.new(0, 581, 0, 246)
 
 	if not openingOther then
-		if panel.Name == "Character" then -- Character Panel Animation
+		if panel.Name == "Character" then -- 字符面板动画
 
 			tweenService:Create(characterPanel.Interactions.PropertiesTitle, TweenInfo.new(0.8, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play()
 
@@ -1884,7 +1884,7 @@ local function closePanel(panelName, openingOther)
 					tweenService:Create(slider.Progress, TweenInfo.new(0.15, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
 					tweenService:Create(slider.UIStroke, TweenInfo.new(0.15, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 					tweenService:Create(slider.Shadow, TweenInfo.new(0.15, Enum.EasingStyle.Quint), {ImageTransparency = 1}):Play()
-					tweenService:Create(slider.Information, TweenInfo.new(0.15, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play() -- tween the text after
+					tweenService:Create(slider.Information, TweenInfo.new(0.15, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play() -- 在文本之后
 				end
 			end
 
@@ -1908,7 +1908,7 @@ local function closePanel(panelName, openingOther)
 			tweenService:Create(characterPanel.Interactions.Rejoin.Title, TweenInfo.new(.15,Enum.EasingStyle.Quint),  {TextTransparency = 1}):Play()
 			tweenService:Create(characterPanel.Interactions.Rejoin.UIStroke, TweenInfo.new(.15,Enum.EasingStyle.Quint),  {Transparency = 1}):Play()
 
-		elseif panel.Name == "Scripts" then -- Scripts Panel Animation
+		elseif panel.Name == "Scripts" then -- 脚本面板动画
 
 			for _, scriptButton in ipairs(scriptsPanel.Interactions.Selection:GetChildren()) do
 				if scriptButton.ClassName == "Frame" then
@@ -1920,7 +1920,7 @@ local function closePanel(panelName, openingOther)
 				end
 			end
 
-		elseif panel.Name == "Playerlist" then -- Playerlist Panel Animation
+		elseif panel.Name == "Playerlist" then -- 玩家列表面板动画
 
 			for _, playerIns in ipairs(playerlistPanel.Interactions.List:GetDescendants()) do
 				if playerIns.ClassName == "Frame" then
@@ -1959,7 +1959,7 @@ local function closePanel(panelName, openingOther)
 		tweenService:Create(toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {Position = UDim2.new(0.5, 0, 1, -85)}):Play()
 	end
 
-	-- Animate interactive elements
+	-- 动画交互元素
 	if openingOther then
 		tweenService:Create(panel, TweenInfo.new(0.45, Enum.EasingStyle.Quint), {Position = UDim2.new(0.5, 350, 1, -90)}):Play()
 		wipeTransparency(panel, 1, true, true, 0.3)
@@ -2013,8 +2013,8 @@ local function openPanel(panelName)
 	tweenService:Create(panel.UIStroke, TweenInfo.new(0.45, Enum.EasingStyle.Quint), {Transparency = 0.95}):Play()
 	task.wait(0.05)
 
-	-- Animate interactive elements
-	if panel.Name == "Character" then -- Character Panel Animation
+	-- 动画交互元素
+	if panel.Name == "Character" then -- 字符面板动画
 
 		tweenService:Create(characterPanel.Interactions.PropertiesTitle, TweenInfo.new(0.8, Enum.EasingStyle.Quint), {TextTransparency = 0.65}):Play()
 
@@ -2094,7 +2094,7 @@ local function openPanel(panelName)
 		tweenService:Create(characterPanel.Interactions.Rejoin.Title, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {TextTransparency = 0.5}):Play()
 		tweenService:Create(characterPanel.Interactions.Rejoin.UIStroke, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {Transparency = 0}):Play()
 
-	elseif panel.Name == "Scripts" then -- Scripts Panel Animation
+	elseif panel.Name == "Scripts" then -- 脚本面板动画
 
 		for _, scriptButton in ipairs(scriptsPanel.Interactions.Selection:GetChildren()) do
 			if scriptButton.ClassName == "Frame" then
@@ -2106,7 +2106,7 @@ local function openPanel(panelName)
 			end
 		end
 
-	elseif panel.Name == "Playerlist" then -- Playerlist Panel Animation
+	elseif panel.Name == "Playerlist" then -- 玩家列表面板动画
 
 		for _, playerIns in ipairs(playerlistPanel.Interactions.List:GetDescendants()) do
 			if playerIns.Name ~= "Interact" and playerIns.Name ~= "Role" then 
