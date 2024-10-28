@@ -1034,7 +1034,7 @@ end)()
 local function checkSirius() return UI.Parent end
 local function getPing() return math.clamp(statsService.Network.ServerStatsItem["Data Ping"]:GetValue(), 10, 700) end
 local function checkFolder() if isfolder then if not isfolder(siriusValues.siriusFolder) then makefolder(siriusValues.siriusFolder) end if not isfolder(siriusValues.siriusFolder.."/Music") then makefolder(siriusValues.siriusFolder.."/Music") writefile(siriusValues.siriusFolder.."/Music/readme.txt", "Hey there! Place your MP3 or other audio files in this folder, and have the ability to play them through the Sirius Music UI!") end if not isfolder(siriusValues.siriusFolder.."/Assets/Icons") then makefolder(siriusValues.siriusFolder.."/Assets/Icons") end if not isfolder(siriusValues.siriusFolder.."/Assets") then makefolder(siriusValues.siriusFolder.."/Assets") end end end
-local function isPanel(name) return not table.find({"Home", "Music", "Settings"}, name) end
+local function isPanel(name) return not table.find({"Home", "音乐", "Settings"}, name) end
 
 local function fetchFromCDN(path, write, savePath)
 	checkFolder()
@@ -1378,7 +1378,7 @@ local function removeReverbs(timing)
 end
 
 local function playNext()
-	if #musicQueue == 0 then currentAudio.Playing = false currentAudio.SoundId = "" musicPanel.Playing.Text = "Not Playing" return end
+	if #musicQueue == 0 then currentAudio.Playing = false currentAudio.SoundId = "" musicPanel.Playing.Text = "没有播放歌曲" return end
 
 	if not currentAudio then
 		local newAudio = Instance.new("Sound")
@@ -2187,7 +2187,7 @@ local function ensureFrameProperties()
 	scriptsPanel.Visible = false
 	settingsPanel.Visible = false
 	smartBar.Visible = false
-	musicPanel.Playing.Text = "Not Playing"
+	musicPanel.Playing.Text = "没有播放歌曲"
 	if not getcustomasset then smartBar.Buttons.Music.Visible = false end
 	toastsContainer.Visible = true
 	makeDraggable(settingsPanel)
