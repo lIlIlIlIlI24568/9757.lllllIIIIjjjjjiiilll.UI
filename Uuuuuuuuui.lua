@@ -173,15 +173,15 @@ local siriusValues = {
 		recentPings = {},
 		adaptiveBaselinePings = {},
 		pingNotificationCooldown = 0,
-		maxSamples = 12, -- max num of recent pings stored
-		spikeThreshold = 1.75, -- high Ping in comparison to average ping (e.g 100 avg would be high at 150)
-		adaptiveBaselineSamples = 30, -- how many samples Sirius takes before deciding on a fixed high ping value
-		adaptiveHighPingThreshold = 120 -- default value
+		maxSamples = 12, -- 存储最近潮汐的最大数量
+		spikeThreshold = 1.75, -- 与平均ping相比，高ping（例如，100 AVG在150处高）
+		adaptiveBaselineSamples = 30, -- 在决定固定的高ping值之前需要多少个样品Sirius
+		adaptiveHighPingThreshold = 120 -- 默认值
 	},
 	frameProfile = {
 		frameNotificationCooldown = 0,
 		fpsQueueSize = 10,
-		lowFPSThreshold = 20, -- what's low fps!??!?!
+		lowFPSThreshold = 20, -- 什么是低fps！??！？！
 		totalFPS = 0,
 		fpsQueue = {},
 	},
@@ -1273,7 +1273,7 @@ local function queueNotification(Title, Description, Image)
 			newNotification.Description.Text = Description or "Unknown Description"
 			newNotification.Time.Text = "now"
 			
-			-- Prepare for animation
+			-- 准备动画
 			newNotification.AnchorPoint = Vector2.new(0.5, 1)
 			newNotification.Position = UDim2.new(0.5, 0, -1, 0)
 			newNotification.Size = UDim2.new(0, 320, 0, 500)
@@ -1356,7 +1356,7 @@ local function checkLastVersion()
 	local lastVersion = isfile and isfile(siriusValues.siriusFolder.."/".."version.srs") and readfile(siriusValues.siriusFolder.."/".."version.srs") or nil
 
 	if lastVersion then
-		if lastVersion ~= siriusValues.siriusVersion then queueNotification("Sirius has been updated", "Sirius has been updated to version "..siriusValues.siriusVersion..", check our Discord for all new features and changes.", 4400701828)  end
+		if lastVersion ~= siriusValues.siriusVersion then queueNotification("Sirius已经更新了","Sirius已更新到版本 "..siriusValues.siriusVersion..", 检查我们的Discord是否有关所有新功能和更改.", 4400701828)  end
 	end
 
 	if writefile then writefile(siriusValues.siriusFolder.."/".."version.srs", siriusValues.siriusVersion) end
@@ -1410,7 +1410,7 @@ end
 local function addToQueue(file)
 	if not getcustomasset then return end
 	checkFolder()
-	if not isfile(siriusValues.siriusFolder.."/Music/"..file) then queueNotification("Unable to locate file", "Please ensure that your audio file is in the Sirius/Music folder and that you are including the file extension (e.g mp3 or ogg).", 4370341699) return end
+	if not isfile(siriusValues.siriusFolder.."/Music/"..file) then queueNotification("无法找到文件","请确保您的音频文件位于Sirius/Music文件夹中,并且您包含文件扩展名例如(MP3或OGG).", 4370341699) return end
 	musicPanel.AddBox.Input.Text = ""
 
 	local newAudio = musicPanel.Queue.List.Template:Clone()
@@ -1612,7 +1612,7 @@ local function syncExperienceInformation()
 
 			gameDetectionPrompt.Layer.Run.MouseButton1Click:Connect(function()
 				closeGameDetection()
-				queueNotification("Running "..gameFound.name, "Now running Sirius' "..gameFound.name.." script, this may take a moment.", 4400701828)
+				queueNotification("运行 "..gameFound.name, "现在运行天狼星' "..gameFound.name.." 脚本,这可能需要片刻.", 4400701828)
 				runScript(rawFile)
 
 			end)
@@ -1695,7 +1695,7 @@ local function sortActions()
 		end)
 
 		characterPanel.Interactions.Grid.MouseLeave:Connect(function()
-			characterPanel.Interactions.ActionsTitle.Text = "PLAYER ACTIONS"
+			characterPanel.Interactions.ActionsTitle.Text = "玩家动作"
 		end)
 
 		newAction.Interact.MouseButton1Click:Connect(function()
@@ -1736,7 +1736,7 @@ local function sortActions()
 			end)
 
 			if not success then
-				queueNotification("Action Error", "This action ('"..(action.name).."') had an error while running, please report this to the Sirius team at sirius.menu/discord", 4370336704)
+				queueNotification("动作错误","此操作 ('"..(action.name).."') 跑步时出错,请向Sirius.Menu/Discord的Sirius团队报告这一点", 4370336704)
 				action.enabled = false
 				newAction.Icon.Image = "rbxassetid://"..action.images[2]
 				tweenService:Create(newAction, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0.55}):Play()
@@ -1874,7 +1874,7 @@ local function closePanel(panelName, openingOther)
 	local panelSize = UDim2.new(0, 581, 0, 246)
 
 	if not openingOther then
-		if panel.Name == "Character" then -- Character Panel Animation
+		if panel.Name == "Character" then -- 字符面板动画
 
 			tweenService:Create(characterPanel.Interactions.PropertiesTitle, TweenInfo.new(0.8, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play()
 
@@ -1908,7 +1908,7 @@ local function closePanel(panelName, openingOther)
 			tweenService:Create(characterPanel.Interactions.Rejoin.Title, TweenInfo.new(.15,Enum.EasingStyle.Quint),  {TextTransparency = 1}):Play()
 			tweenService:Create(characterPanel.Interactions.Rejoin.UIStroke, TweenInfo.new(.15,Enum.EasingStyle.Quint),  {Transparency = 1}):Play()
 
-		elseif panel.Name == "Scripts" then -- Scripts Panel Animation
+		elseif panel.Name == "Scripts" then -- 脚本面板动画
 
 			for _, scriptButton in ipairs(scriptsPanel.Interactions.Selection:GetChildren()) do
 				if scriptButton.ClassName == "Frame" then
@@ -1920,7 +1920,7 @@ local function closePanel(panelName, openingOther)
 				end
 			end
 
-		elseif panel.Name == "Playerlist" then -- Playerlist Panel Animation
+		elseif panel.Name == "Playerlist" then -- 玩家列表面板动画
 
 			for _, playerIns in ipairs(playerlistPanel.Interactions.List:GetDescendants()) do
 				if playerIns.ClassName == "Frame" then
@@ -1959,7 +1959,7 @@ local function closePanel(panelName, openingOther)
 		tweenService:Create(toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {Position = UDim2.new(0.5, 0, 1, -85)}):Play()
 	end
 
-	-- Animate interactive elements
+	-- 动画交互元素
 	if openingOther then
 		tweenService:Create(panel, TweenInfo.new(0.45, Enum.EasingStyle.Quint), {Position = UDim2.new(0.5, 350, 1, -90)}):Play()
 		wipeTransparency(panel, 1, true, true, 0.3)
@@ -2013,8 +2013,8 @@ local function openPanel(panelName)
 	tweenService:Create(panel.UIStroke, TweenInfo.new(0.45, Enum.EasingStyle.Quint), {Transparency = 0.95}):Play()
 	task.wait(0.05)
 
-	-- Animate interactive elements
-	if panel.Name == "Character" then -- Character Panel Animation
+	-- 动画交互元素
+	if panel.Name == "Character" then -- 字符面板动画
 
 		tweenService:Create(characterPanel.Interactions.PropertiesTitle, TweenInfo.new(0.8, Enum.EasingStyle.Quint), {TextTransparency = 0.65}):Play()
 
@@ -2094,7 +2094,7 @@ local function openPanel(panelName)
 		tweenService:Create(characterPanel.Interactions.Rejoin.Title, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {TextTransparency = 0.5}):Play()
 		tweenService:Create(characterPanel.Interactions.Rejoin.UIStroke, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {Transparency = 0}):Play()
 
-	elseif panel.Name == "Scripts" then -- Scripts Panel Animation
+	elseif panel.Name == "Scripts" then -- 脚本面板动画
 
 		for _, scriptButton in ipairs(scriptsPanel.Interactions.Selection:GetChildren()) do
 			if scriptButton.ClassName == "Frame" then
@@ -2106,7 +2106,7 @@ local function openPanel(panelName)
 			end
 		end
 
-	elseif panel.Name == "Playerlist" then -- Playerlist Panel Animation
+	elseif panel.Name == "Playerlist" then -- 玩家列表面板动画
 
 		for _, playerIns in ipairs(playerlistPanel.Interactions.List:GetDescendants()) do
 			if playerIns.Name ~= "Interact" and playerIns.Name ~= "Role" then 
@@ -2138,7 +2138,7 @@ local function openPanel(panelName)
 end
 
 local function rejoin()
-	queueNotification("Rejoining Session", "We're queueing a rejoin to this session, give us a moment.", 4400696294)
+	queueNotification("再加入会话","我们向本次会议排队,给我们一个时刻.", 4400696294)
 
 	if #players:GetPlayers() <= 1 then
 		task.wait()
@@ -2162,11 +2162,11 @@ local function serverhop()
 	end
 
 	if #servers > 0 then
-		queueNotification("Teleporting", "We're now moving you to the new session, this may take a few seconds.", 4335479121)
+		queueNotification("传送","我们现在将您搬到新会议,这可能需要几秒钟.", 4335479121)
 		task.wait(0.3)
 		teleportService:TeleportToPlaceInstance(placeId, servers[1])
 	else
-		return queueNotification("No Servers Found", "We couldn't find another server, this may be the only server.", 4370317928)
+		return queueNotification("没有找到服务器","我们找不到另一台服务器,这可能是唯一的服务器.", 4370317928)
 	end
 
 end
@@ -2346,34 +2346,34 @@ local function UpdateHome()
 		return format(Hours)..":"..format(Minutes)..":"..format(Seconds)
 	end
 
-	-- Home Title
-	homeContainer.Title.Text = "Welcome home, "..localPlayer.DisplayName
+	-- 主张
+	homeContainer.Title.Text = "欢迎回家, "..localPlayer.DisplayName
 
-	-- Players
+	-- 玩家
 	homeContainer.Interactions.Server.Players.Value.Text = #players:GetPlayers().." playing"
 	homeContainer.Interactions.Server.MaxPlayers.Value.Text = players.MaxPlayers.." players can join this server"
 
 	-- Ping
 	homeContainer.Interactions.Server.Latency.Value.Text = math.floor(getPing()).."ms"
 
-	-- Time
+	-- 时间
 	homeContainer.Interactions.Server.Time.Value.Text = convertToHMS(time())
 
-	-- Region
+	-- 地区
 	homeContainer.Interactions.Server.Region.Value.Text = "Unable to retrieve region"
 
-	-- Player Information
+	-- 玩家信息
 	homeContainer.Interactions.User.Avatar.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..localPlayer.UserId.."&width=420&height=420&format=png"
 	homeContainer.Interactions.User.Title.Text = localPlayer.DisplayName
 	homeContainer.Interactions.User.Subtitle.Text = localPlayer.Name
 
-	-- Update Executor
+	-- 更新执行程序
 	homeContainer.Interactions.Client.Title.Text = identifyexecutor()
 	if not table.find(siriusValues.executors, string.lower(identifyexecutor())) then
-		homeContainer.Interactions.Client.Subtitle.Text = "This executor is not verified as supported."
+		homeContainer.Interactions.Client.Subtitle.Text = "此执行程序未被验证为支持."
 	end
 
-	-- Update Friends Statuses
+	-- 更新朋友状态
 	checkFriends()
 end
 
@@ -2638,7 +2638,7 @@ local function createScript(result)
 			newScript.Tags.Review.BackgroundColor3 = (likes > dislikes) and Color3.fromRGB(0, 139, 102) or Color3.fromRGB(180, 0, 0)
 			newScript.Tags.Review.Size = (likes > dislikes) and UDim2.new(0, 145, 1, 0) or UDim2.new(0, 150, 1, 0)
 		elseif likes > 0 then
-			newScript.Tags.Review.Title.Text = "Mixed Reviews"
+			newScript.Tags.Review.Title.Text = "混合评论"
 			newScript.Tags.Review.BackgroundColor3 = Color3.fromRGB(198, 132, 0)
 			newScript.Tags.Review.Size = UDim2.new(0, 130, 1, 0)
 		else
@@ -2676,7 +2676,7 @@ local function createScript(result)
 	newScript.Tags.Patched.Visible = result.isPatched or false
 
 	newScript.Execute.MouseButton1Click:Connect(function()
-		queueNotification("ScriptSearch", "Running "..result.title.. " via ScriptSearch" , 4384403532)
+		queueNotification("脚本搜索","运行 "..result.title.. " 通过脚本搜索" , 4384403532)
 		closeScriptSearch()
 		loadstring(result.script)()
 	end)
@@ -2738,7 +2738,7 @@ local function securityDetection(title, content, link, gradient, actions)
 		newAction.Text = action[1]
 		newAction.Parent = newSecurityPrompt.Buttons
 		newAction.Visible = true
-		newAction.Size = UDim2.new(0, newAction.TextBounds.X + 50, 0, 36) -- textbounds
+		newAction.Size = UDim2.new(0, newAction.TextBounds.X + 50, 0, 36) -- 文本界限
 
 		newAction.MouseButton1Click:Connect(function()
 			if action[2] then
@@ -2794,8 +2794,8 @@ end
 if Essential or Pro then
 	getgenv()[index] = function(data)
 		if checkSirius() and checkSetting("Intelligent HTTP Interception").current then
-			local title = "Do you trust this source?"
-			local content = "Sirius has prevented data from being sent off-client, would you like to allow data to be sent or retrieved from this source?"
+			local title = "你相信这个来源吗?"
+			local content = "Sirius阻止了从客户端发送的数据,您是否需要从此来源发送或检索数据?"
 			local url = data.Url or "Unknown Link"
 			local gradient = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),ColorSequenceKeypoint.new(1, Color3.new(0.764706, 0.305882, 0.0941176))})
 			local actions = {{"Always Allow", true, true}, {"Allow just this once", true}, {"Don't Allow", false}}
@@ -2804,8 +2804,8 @@ if Essential or Pro then
 				local bodyDecoded = httpService:JSONDecode(data.Body)
 
 				if bodyDecoded.cmd == "INVITE_BROWSER" then
-					title = "Would you like to join this Discord server?"
-					content = "Sirius has prevented your Discord client from automatically joining this Discord server, would you like to continue and join, or block it?"
+					title = "你想加入这个discord服务器吗?"
+					content = "SIRIUS已阻止您的Discord客户端自动加入此Discord服务器,您是否需要继续并加入或阻止它？"
 					url = bodyDecoded.args and "discord.gg/"..bodyDecoded.args.code or "Unknown Invite"
 					gradient = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),ColorSequenceKeypoint.new(1, Color3.new(0.345098, 0.396078, 0.94902))})
 					actions = {{"Allow", true}, {"Don't Allow", false}}
@@ -2827,8 +2827,8 @@ if Essential or Pro then
 
 	getgenv()[indexSetClipboard] = function(data)
 		if checkSirius() and checkSetting("Intelligent Clipboard Interception").current then
-			local title = "Would you like to copy this to your clipboard?"
-			local content = "Sirius has prevented a script from setting the below text to your clipboard, would you like to allow this, or prevent it from copying?"
+			local title = "你想把它复制到你的剪贴板吗?"
+			local content = "Sirius阻止了一个脚本将下面的文本设置为剪贴板,您是否需要允许此操作,或阻止它复制？"
 			local url = data or "Unknown Clipboard"
 			local gradient = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),ColorSequenceKeypoint.new(1, Color3.new(0.776471, 0.611765, 0.529412))})
 			local actions = {{"Allow", true}, {"Don't Allow", false}}
@@ -2860,7 +2860,7 @@ local function searchScriptBlox(query)
 	end)
 
 	if not success then
-		queueNotification("ScriptSearch", "ScriptSearch backend encountered an error, try again later", 4384402990)
+		queueNotification("脚本搜索","脚本搜索后端遇到错误,稍后再试", 4384402990)
 		closeScriptSearch()
 		return
 	end
@@ -2909,7 +2909,7 @@ local function searchScriptBlox(query)
 			tweenService:Create(scriptSearch.List, TweenInfo.new(.3,Enum.EasingStyle.Quint),  {ScrollBarImageTransparency = 0}):Play()
 		end
 	else
-		queueNotification("ScriptSearch", "ScriptSearch backend encountered an error, try again later", 4384402990)
+		queueNotification("脚本搜索","脚本搜索后端遇到错误,稍后再试", 4384402990)
 		closeScriptSearch()
 		return
 	end
@@ -2920,7 +2920,7 @@ local function openSmartBar()
 
 	coreGui.RobloxGui.Backpack.Position = UDim2.new(0,0,0,0)
 
-	-- Set Values for frame properties
+	-- 设置帧属性的值
 	smartBar.BackgroundTransparency = 1
 	smartBar.Time.TextTransparency = 1
 	smartBar.UIStroke.Transparency = 1
@@ -3000,7 +3000,7 @@ local function closeSmartBar()
 	tweenService:Create(smartBar, TweenInfo.new(0.5, Enum.EasingStyle.Back), {Size = UDim2.new(0,531,0,64)}):Play()
 	tweenService:Create(smartBar, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {Position = UDim2.new(0.5, 0,1, 73)}):Play()
 
-	-- If tools, move the toggle
+	-- 如果工具，请移动切换
 	if checkTools() then
 		tweenService:Create(toggle, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {Position = UDim2.new(0.5,0,1,-68)}):Play()
 		tweenService:Create(toastsContainer, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {Position = UDim2.new(0.5, 0, 1, -90)}):Play()
@@ -3014,10 +3014,10 @@ end
 
 local function windowFocusChanged(value)
 	if checkSirius() then
-		if value then -- Window Focused
+		if value then -- 窗口聚焦
 			setfpscap(tonumber(checkSetting("Artificial FPS Limit").current))
 			removeReverbs(0.5)
-		else          -- Window unfocused
+		else          -- 窗户未聚焦
 			if checkSetting("Muffle audio while unfocused").current then createReverb(0.7) end
 			if checkSetting("Limit FPS while unfocused").current then setfpscap(60) end
 		end
@@ -3045,7 +3045,7 @@ local function onChatted(player, message)
 		get:Disconnect()
 
 		if hidden and enabled then
-			chatSpyVisuals.Text = "Sirius Spy - [".. player.Name .."]: "..message2
+			chatSpyVisuals.Text = "天狼星间谍 - [".. player.Name .."]: "..message2
 			starterGui:SetCore("ChatMakeSystemMessage", chatSpyVisuals)
 		end
 	end
@@ -3096,17 +3096,17 @@ local function sortPlayers()
 end
 
 local function kill(player)
-	-- kill
+	-- 杀死
 end
 
 local function teleportTo(player)
 	if players:FindFirstChild(player.Name) then
-		queueNotification("Teleportation", "Teleporting to "..player.DisplayName..".")
+		queueNotification("传送","传送到 "..player.DisplayName..".")
 
 		local target = workspace:FindFirstChild(player.Name).HumanoidRootPart
 		localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(target.Position.X, target.Position.Y, target.Position.Z)
 	else
-		queueNotification("Teleportation Error", player.DisplayName.." has left this server.")
+		queueNotification("传送错误", player.DisplayName.." 留下了这个服务器.")
 	end
 end
 
@@ -3226,7 +3226,7 @@ local function createPlayer(player)
 	end)
 
 	newPlayer.PlayerInteractions.Kill.Interact.MouseButton1Click:Connect(function()
-		queueNotification("Simulation Notification","Simulating Kill Notification for "..player.DisplayName..".")
+		queueNotification("仿真通知","模拟杀戮通知 "..player.DisplayName..".")
 		tweenService:Create(newPlayer.PlayerInteractions.Kill, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(0, 124, 89)}):Play()
 		tweenService:Create(newPlayer.PlayerInteractions.Kill.Icon, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageColor3 = Color3.fromRGB(220, 220, 220)}):Play()
 		tweenService:Create(newPlayer.PlayerInteractions.Kill.UIStroke, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {Color = Color3.fromRGB(0, 134, 96)}):Play()
@@ -3249,13 +3249,13 @@ local function createPlayer(player)
 	end)
 
 	newPlayer.PlayerInteractions.Spectate.Interact.MouseButton1Click:Connect(function()
-		queueNotification("Simulation Notification","Simulating Spectate Notification for "..player.DisplayName..".")
-		-- Spectate
+		queueNotification("仿真通知","模拟窥探通知 "..player.DisplayName..".")
+		-- 规格
 	end)
 
 	newPlayer.PlayerInteractions.Locate.Interact.MouseButton1Click:Connect(function()
-		queueNotification("Simulation Notification","Simulating Locate ESP Notification for "..player.DisplayName..".")
-		-- ESP for that user only
+		queueNotification("仿真通知","模拟查找ESP通知 "..player.DisplayName..".")
+		-- 仅适用于该用户
 	end)
 end
 
@@ -3288,7 +3288,7 @@ local function openSettings()
 	settingsPanel.Size = UDim2.new(0, 550, 0, 340)
 	settingsPanel.Title.Position = UDim2.new(0.045, 0, 0.057, 0)
 
-	settingsPanel.Title.Text = "Settings"
+	settingsPanel.Title.Text = "设置"
 	settingsPanel.Subtitle.Text = "调整您的首选项,设置新的键控,测试新功能等."
 
 	tweenService:Create(settingsPanel, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 613, 0, 384)}):Play()
@@ -3393,7 +3393,7 @@ local function assembleSettings()
 				end
 			end
 
-			writefile(siriusValues.siriusFolder.."/"..siriusValues.settingsFile, httpService:JSONEncode(siriusSettings)) -- Update file with any new settings added
+			writefile(siriusValues.siriusFolder.."/"..siriusValues.settingsFile, httpService:JSONEncode(siriusSettings)) -- 使用任何新设置添加的文件更新文件
 		end
 	else
 		if writefile then
@@ -3434,7 +3434,7 @@ local function assembleSettings()
 			tweenService:Create(settingsPanel.Back, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0.002, 0, 0.052, 0)}):Play()
 			tweenService:Create(settingsPanel.Title, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0.045, 0, 0.057, 0)}):Play()
 			tweenService:Create(settingsPanel.UIGradient, TweenInfo.new(1, Enum.EasingStyle.Exponential), {Offset = Vector2.new(0, 1.3)}):Play()
-			settingsPanel.Title.Text = "Settings"
+			settingsPanel.Title.Text = "设置"
 			settingsPanel.Subtitle.Text = "调整您的首选项,设置新的键控,测试新功能等"
 			settingsPanel.SettingTypes.Visible = true
 			settingsPanel.SettingLists.Visible = false
@@ -3457,7 +3457,7 @@ local function assembleSettings()
 				tweenService:Create(settingsPanel.Back, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0.041, 0, 0.052, 0)}):Play()
 				tweenService:Create(settingsPanel.Title, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0.091, 0, 0.057, 0)}):Play()
 			else
-				-- error
+				-- 错误
 				closeSettings()
 			end
 		end)
@@ -3510,7 +3510,7 @@ local function assembleSettings()
 					newSwitch.Interact.MouseButton1Click:Connect(function()
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu升级.", 4483345875)
 								return
 							end
 						end
@@ -3561,7 +3561,7 @@ local function assembleSettings()
 					newInput.InputFrame.InputBox.FocusLost:Connect(function()
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu升级.", 4483345875)
 								newInput.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3606,7 +3606,7 @@ local function assembleSettings()
 
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu升级.", 4483345875)
 								newInput.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3665,7 +3665,7 @@ local function assembleSettings()
 
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定" "您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu升级.", 4483345875)
 								newKeybind.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3750,7 +3750,7 @@ local function initialiseAntiKick()
 
 			originalIndex = hookmetamethod(game, "__index", function(self, method)
 				if self == localPlayer and method:lower() == "kick" and checkSetting("Client-Based Anti Kick").current and checkSirius() then
-					queueNotification("Kick Prevented", "Sirius has prevented you from being kicked by the client.", 4400699701)
+					queueNotification("踢踢","天狼星阻止了你被客户踢了.", 4400699701)
 					return error("Expected ':' not '.' calling member function Kick", 2)
 				end
 				return originalIndex(self, method)
@@ -3758,7 +3758,7 @@ local function initialiseAntiKick()
 
 			originalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
 				if self == localPlayer and getnamecallmethod():lower() == "kick" and checkSetting("Client-Based Anti Kick").current and checkSirius() then
-					queueNotification("Kick Prevented", "Sirius has prevented you from being kicked by the client.", 4400699701)
+					queueNotification("踢踢","天狼星阻止了你被客户踢了.", 4400699701)
 					return
 				end
 				return originalNamecall(self, ...)
@@ -3768,7 +3768,7 @@ local function initialiseAntiKick()
 end
 
 local function start()
-	if siriusValues.releaseType == "Experimental" then -- Make this more secure.
+	if siriusValues.releaseType == "Experimental" then -- 让这个更安全.
 		if not Pro then localPlayer:Kick("This is an experimental release, you must be Pro to run this. \n\nUpgrade at https://sirius.menu/") return end
 	end
 	windowFocusChanged(true)
@@ -3814,7 +3814,7 @@ local function start()
 	end
 
 	if script_key and not Essential and not Pro then
-		queueNotification("License Error", "We've detected a key being placed above Sirius loadstring, however your key seems to be invalid. Make a support request at sirius.menu/discord to get this solved within minutes.", "document-minus")
+		queueNotification("许可证错误","我们检测到一个键被放置在Sirius LoadString上方,但是您的钥匙似乎无效. 在Sirius.Menu/Discord作出支持请求,以便在几分钟内得到解决.","文件 - 减去")
 	end
 
 	if siriusValues.enableExperienceSync then
@@ -3822,7 +3822,7 @@ local function start()
 	end
 end
 
--- Sirius Events
+-- 天狼星活动
 
 start()
 
@@ -3838,7 +3838,7 @@ characterPanel.Interactions.Reset.MouseButton1Click:Connect(function()
 	resetSliders()
 
 	characterPanel.Interactions.Reset.Rotation = 360
-	queueNotification("Slider Values Reset","Successfully reset all character panel sliders", 4400696294)
+	queueNotification("滑块值重置","成功重置所有字符面板滑块", 4400696294)
 	tweenService:Create(characterPanel.Interactions.Reset, TweenInfo.new(.5,Enum.EasingStyle.Back),  {Rotation = 0}):Play()
 end)
 
@@ -3940,23 +3940,23 @@ characterPanel.Interactions.Serverhop.Interact.MouseButton1Click:Connect(serverh
 homeContainer.Interactions.Server.JobId.Interact.MouseButton1Click:Connect(function()
 	if setclipboard then 
 		originalSetClipboard([[
--- This script will teleport you to ' ]]..game:GetService("MarketplaceService"):GetProductInfo(placeId).Name..[['
--- If it doesn't work after a few seconds, try going into the same game, and then run the script to join ]]..localPlayer.DisplayName.. [['s specific server
+-- 此脚本将传送您到']] ..游戏：getservice（“marketplaceservice”）：getProductinfo（PlaceId）.name .. [['
+-- 如果它在几秒钟后不起作用，请尝试进入同一游戏，然后运行脚本加入]] .. localplayer.displayname .. [[是特定的服务器
 
 game:GetService("TeleportService"):TeleportToPlaceInstance(']]..placeId..[[', ']]..jobId..[[')]]
 		)
-		queueNotification("Copied Join Script","Successfully set clipboard to join script, players can use this script to join your specific server.", 4335479121)
+		queueNotification("复制加入脚本","成功设置剪贴板加入脚本,播放器可以使用此脚本加入您的特定服务器.", 4335479121)
 	else
-		queueNotification("Unable to copy join script","Missing setclipboard() function, can't set data to your clipboard.", 4335479658)
+		queueNotification("无法复制加入脚本","缺少SetClipboard（）函数，无法将数据设置为剪贴板.", 4335479658)
 	end
 end)
 
 homeContainer.Interactions.Discord.Interact.MouseButton1Click:Connect(function()
 	if setclipboard then 
 		originalSetClipboard("https://sirius.menu/discord")
-		queueNotification("Discord Invite Copied", "We've set your clipboard to the Sirius discord invite.", 4335479121)
+		queueNotification("Discord Invite复制了","我们已经将剪贴板设置为Sirius Discord Invite.", 4335479121)
 	else
-		queueNotification("Unable to copy Discord invite", "Missing setclipboard() function, can't set data to your clipboard.", 4335479658)
+		queueNotification("无法复制Discord Invite","缺少SetClipboard（）函数,无法将数据设置为剪贴板.", 4335479658)
 	end
 end)
 
@@ -3989,7 +3989,7 @@ for _, button in ipairs(scriptsPanel.Interactions.Selection:GetChildren()) do
 		if button.Name == "Library" then
 			if not scriptSearch.Visible and not debounce then openScriptSearch() end
 		end
-		-- run action
+		-- 运行行动
 	end)
 end
 
@@ -4300,7 +4300,7 @@ runService.Stepped:Connect(function()
 
 	local character = localPlayer.Character
 	if character then
-		-- No Clip
+		-- 穿墙
 		local noclipEnabled = siriusValues.actions[1].enabled
 		local flingEnabled = siriusValues.actions[6].enabled
 
@@ -4497,7 +4497,7 @@ while task.wait(1) do
 
 	toggle.Visible = not checkSetting("Hide Toggle Button").current
 
-	-- Disconnected Check
+	-- 断开连接
 	local disconnectedRobloxUI = coreGui.RobloxPromptGui.promptOverlay:FindFirstChild("ErrorPrompt")
 
 	if disconnectedRobloxUI and not promptedDisconnected then
@@ -4571,9 +4571,9 @@ while task.wait(1) do
 	end
 
 	if Pro then
-		-- all Pro checks here!
+		-- 所有人都在这里检查！
 
-		-- Two-Way Adaptive Latency Checks
+		-- 双向自适应延迟检查
 		if checkHighPing() then
 			if siriusValues.pingProfile.pingNotificationCooldown <= 0 then
 				if checkSetting("Adaptive Latency Warning").current then
@@ -4587,7 +4587,7 @@ while task.wait(1) do
 			siriusValues.pingProfile.pingNotificationCooldown -= 1
 		end
 
-		-- Adaptive frame time checks
+		-- 自适应帧时间检查
 		if siriusValues.frameProfile.frameNotificationCooldown <= 0 then
 			if #siriusValues.frameProfile.fpsQueue > 0 then
 				local avgFPS = siriusValues.frameProfile.totalFPS / #siriusValues.frameProfile.fpsQueue
