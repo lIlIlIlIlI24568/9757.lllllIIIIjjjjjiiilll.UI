@@ -3510,7 +3510,7 @@ local function assembleSettings()
 					newSwitch.Interact.MouseButton1Click:Connect(function()
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								return
 							end
 						end
@@ -3561,7 +3561,7 @@ local function assembleSettings()
 					newInput.InputFrame.InputBox.FocusLost:Connect(function()
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								newInput.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3606,7 +3606,7 @@ local function assembleSettings()
 
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								newInput.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3665,7 +3665,7 @@ local function assembleSettings()
 
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								newKeybind.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3814,7 +3814,7 @@ local function start()
 	end
 
 	if script_key and not Essential and not Pro then
-		queueNotification("许可证错误","我们检测到一个键被放置在Sirius LoadString上方,但是您的钥匙似乎无效. 在Sirius.Menu/Discord作出支持请求,以便在几分钟内得到解决.","文件 - 减去")
+		queueNotification("License Error", "We've detected a key being placed above Sirius loadstring, however your key seems to be invalid. Make a support request at sirius.menu/discord to get this solved within minutes.", "document-minus")
 	end
 
 	if siriusValues.enableExperienceSync then
