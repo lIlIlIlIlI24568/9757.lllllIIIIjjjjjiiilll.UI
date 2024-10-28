@@ -3750,7 +3750,7 @@ local function initialiseAntiKick()
 
 			originalIndex = hookmetamethod(game, "__index", function(self, method)
 				if self == localPlayer and method:lower() == "kick" and checkSetting("Client-Based Anti Kick").current and checkSirius() then
-					queueNotification("踢踢","天狼星阻止了你被客户踢了.", 4400699701)
+					queueNotification("Kick Prevented", "Sirius has prevented you from being kicked by the client.", 4400699701)
 					return error("Expected ':' not '.' calling member function Kick", 2)
 				end
 				return originalIndex(self, method)
@@ -3758,7 +3758,7 @@ local function initialiseAntiKick()
 
 			originalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
 				if self == localPlayer and getnamecallmethod():lower() == "kick" and checkSetting("Client-Based Anti Kick").current and checkSirius() then
-					queueNotification("踢踢","天狼星阻止了你被客户踢了.", 4400699701)
+					queueNotification("Kick Prevented", "Sirius has prevented you from being kicked by the client.", 4400699701)
 					return
 				end
 				return originalNamecall(self, ...)
@@ -3768,7 +3768,7 @@ local function initialiseAntiKick()
 end
 
 local function start()
-	if siriusValues.releaseType == "Experimental" then -- 让这个更安全.
+	if siriusValues.releaseType == "Experimental" then -- Make this more secure.
 		if not Pro then localPlayer:Kick("This is an experimental release, you must be Pro to run this. \n\nUpgrade at https://sirius.menu/") return end
 	end
 	windowFocusChanged(true)
@@ -3814,7 +3814,7 @@ local function start()
 	end
 
 	if script_key and not Essential and not Pro then
-		queueNotification("许可证错误","我们检测到一个键被放置在Sirius LoadString上方,但是您的钥匙似乎无效. 在Sirius.Menu/Discord作出支持请求,以便在几分钟内得到解决.","文件 - 减去")
+		queueNotification("License Error", "We've detected a key being placed above Sirius loadstring, however your key seems to be invalid. Make a support request at sirius.menu/discord to get this solved within minutes.", "document-minus")
 	end
 
 	if siriusValues.enableExperienceSync then
@@ -3822,7 +3822,7 @@ local function start()
 	end
 end
 
--- 天狼星活动
+-- Sirius Events
 
 start()
 
@@ -3838,14 +3838,14 @@ characterPanel.Interactions.Reset.MouseButton1Click:Connect(function()
 	resetSliders()
 
 	characterPanel.Interactions.Reset.Rotation = 360
-	queueNotification("滑块值重置","成功重置所有字符面板滑块", 4400696294)
+	queueNotification("Slider Values Reset","Successfully reset all character panel sliders", 4400696294)
 	tweenService:Create(characterPanel.Interactions.Reset, TweenInfo.new(.5,Enum.EasingStyle.Back),  {Rotation = 0}):Play()
 end)
 
 characterPanel.Interactions.Reset.MouseEnter:Connect(function() if debounce then return end tweenService:Create(characterPanel.Interactions.Reset, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {ImageTransparency = 0}):Play() end)
 characterPanel.Interactions.Reset.MouseLeave:Connect(function() if debounce then return end tweenService:Create(characterPanel.Interactions.Reset, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {ImageTransparency = 0.7}):Play() end)
 
-local playerSearch = playerlistPanel.Interactions.SearchFrame.SearchBox -- 完成后将其移动到变量
+local playerSearch = playerlistPanel.Interactions.SearchFrame.SearchBox -- move this up to Variables once finished
 
 playerSearch:GetPropertyChangedSignal("Text"):Connect(function()
 	local query = string.lower(playerSearch.Text)
@@ -3940,23 +3940,23 @@ characterPanel.Interactions.Serverhop.Interact.MouseButton1Click:Connect(serverh
 homeContainer.Interactions.Server.JobId.Interact.MouseButton1Click:Connect(function()
 	if setclipboard then 
 		originalSetClipboard([[
--- 此脚本将传送您到']] ..游戏：getservice（“marketplaceservice”）：getProductinfo（PlaceId）.name .. [['
--- 如果它在几秒钟后不起作用，请尝试进入同一游戏，然后运行脚本加入]] .. localplayer.displayname .. [[是特定的服务器
+-- This script will teleport you to ' ]]..game:GetService("MarketplaceService"):GetProductInfo(placeId).Name..[['
+-- If it doesn't work after a few seconds, try going into the same game, and then run the script to join ]]..localPlayer.DisplayName.. [['s specific server
 
 game:GetService("TeleportService"):TeleportToPlaceInstance(']]..placeId..[[', ']]..jobId..[[')]]
 		)
-		queueNotification("复制加入脚本","成功设置剪贴板加入脚本,播放器可以使用此脚本加入您的特定服务器.", 4335479121)
+		queueNotification("Copied Join Script","Successfully set clipboard to join script, players can use this script to join your specific server.", 4335479121)
 	else
-		queueNotification("无法复制加入脚本","缺少SetClipboard()函数,无法将数据设置为剪贴板.", 4335479658)
+		queueNotification("Unable to copy join script","Missing setclipboard() function, can't set data to your clipboard.", 4335479658)
 	end
 end)
 
 homeContainer.Interactions.Discord.Interact.MouseButton1Click:Connect(function()
 	if setclipboard then 
 		originalSetClipboard("https://sirius.menu/discord")
-		queueNotification("Discord Invite复制了","我们已经将剪贴板设置为Sirius Discord Invite.", 4335479121)
+		queueNotification("Discord Invite Copied", "We've set your clipboard to the Sirius discord invite.", 4335479121)
 	else
-		queueNotification("无法复制Discord Invite","缺少SetClipboard()函数,无法将数据设置为剪贴板.", 4335479658)
+		queueNotification("Unable to copy Discord invite", "Missing setclipboard() function, can't set data to your clipboard.", 4335479658)
 	end
 end)
 
