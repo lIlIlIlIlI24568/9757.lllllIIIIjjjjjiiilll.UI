@@ -3226,7 +3226,7 @@ local function createPlayer(player)
 	end)
 
 	newPlayer.PlayerInteractions.Kill.Interact.MouseButton1Click:Connect(function()
-		queueNotification("Simulation Notification","Simulating Kill Notification for "..player.DisplayName..".")
+		queueNotification("仿真通知","模拟杀戮通知 "..player.DisplayName..".")
 		tweenService:Create(newPlayer.PlayerInteractions.Kill, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(0, 124, 89)}):Play()
 		tweenService:Create(newPlayer.PlayerInteractions.Kill.Icon, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageColor3 = Color3.fromRGB(220, 220, 220)}):Play()
 		tweenService:Create(newPlayer.PlayerInteractions.Kill.UIStroke, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {Color = Color3.fromRGB(0, 134, 96)}):Play()
@@ -3249,13 +3249,13 @@ local function createPlayer(player)
 	end)
 
 	newPlayer.PlayerInteractions.Spectate.Interact.MouseButton1Click:Connect(function()
-		queueNotification("Simulation Notification","Simulating Spectate Notification for "..player.DisplayName..".")
-		-- Spectate
+		queueNotification("仿真通知","模拟窥探通知 "..player.DisplayName..".")
+		-- 规格
 	end)
 
 	newPlayer.PlayerInteractions.Locate.Interact.MouseButton1Click:Connect(function()
-		queueNotification("Simulation Notification","Simulating Locate ESP Notification for "..player.DisplayName..".")
-		-- ESP for that user only
+		queueNotification("仿真通知","模拟查找ESP通知 "..player.DisplayName..".")
+		-- 仅适用于该用户
 	end)
 end
 
@@ -3288,8 +3288,8 @@ local function openSettings()
 	settingsPanel.Size = UDim2.new(0, 550, 0, 340)
 	settingsPanel.Title.Position = UDim2.new(0.045, 0, 0.057, 0)
 
-	settingsPanel.Title.Text = "Settings"
-	settingsPanel.Subtitle.Text = "Adjust your preferences, set new keybinds, test out new features and more."
+	settingsPanel.Title.Text = "设置"
+	settingsPanel.Subtitle.Text = "调整您的首选项,设置新的键控,测试新功能等."
 
 	tweenService:Create(settingsPanel, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 613, 0, 384)}):Play()
 	tweenService:Create(settingsPanel, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
@@ -3393,7 +3393,7 @@ local function assembleSettings()
 				end
 			end
 
-			writefile(siriusValues.siriusFolder.."/"..siriusValues.settingsFile, httpService:JSONEncode(siriusSettings)) -- Update file with any new settings added
+			writefile(siriusValues.siriusFolder.."/"..siriusValues.settingsFile, httpService:JSONEncode(siriusSettings)) -- 使用任何新设置添加的文件更新文件
 		end
 	else
 		if writefile then
@@ -3434,8 +3434,8 @@ local function assembleSettings()
 			tweenService:Create(settingsPanel.Back, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0.002, 0, 0.052, 0)}):Play()
 			tweenService:Create(settingsPanel.Title, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0.045, 0, 0.057, 0)}):Play()
 			tweenService:Create(settingsPanel.UIGradient, TweenInfo.new(1, Enum.EasingStyle.Exponential), {Offset = Vector2.new(0, 1.3)}):Play()
-			settingsPanel.Title.Text = "Settings"
-			settingsPanel.Subtitle.Text = "Adjust your preferences, set new keybinds, test out new features and more"
+			settingsPanel.Title.Text = "设置"
+			settingsPanel.Subtitle.Text = "调整您的首选项,设置新的键控,测试新功能等"
 			settingsPanel.SettingTypes.Visible = true
 			settingsPanel.SettingLists.Visible = false
 		end)
@@ -3457,7 +3457,7 @@ local function assembleSettings()
 				tweenService:Create(settingsPanel.Back, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0.041, 0, 0.052, 0)}):Play()
 				tweenService:Create(settingsPanel.Title, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0.091, 0, 0.057, 0)}):Play()
 			else
-				-- error
+				-- 错误
 				closeSettings()
 			end
 		end)
