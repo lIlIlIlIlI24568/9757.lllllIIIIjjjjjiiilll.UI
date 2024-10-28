@@ -1273,7 +1273,7 @@ local function queueNotification(Title, Description, Image)
 			newNotification.Description.Text = Description or "Unknown Description"
 			newNotification.Time.Text = "now"
 			
-			-- Prepare for animation
+			-- 准备动画
 			newNotification.AnchorPoint = Vector2.new(0.5, 1)
 			newNotification.Position = UDim2.new(0.5, 0, -1, 0)
 			newNotification.Size = UDim2.new(0, 320, 0, 500)
@@ -1356,7 +1356,7 @@ local function checkLastVersion()
 	local lastVersion = isfile and isfile(siriusValues.siriusFolder.."/".."version.srs") and readfile(siriusValues.siriusFolder.."/".."version.srs") or nil
 
 	if lastVersion then
-		if lastVersion ~= siriusValues.siriusVersion then queueNotification("Sirius has been updated", "Sirius has been updated to version "..siriusValues.siriusVersion..", check our Discord for all new features and changes.", 4400701828)  end
+		if lastVersion ~= siriusValues.siriusVersion then queueNotification("Sirius已经更新了","Sirius已更新到版本 "..siriusValues.siriusVersion..", 检查我们的Discord是否有关所有新功能和更改.", 4400701828)  end
 	end
 
 	if writefile then writefile(siriusValues.siriusFolder.."/".."version.srs", siriusValues.siriusVersion) end
@@ -1410,7 +1410,7 @@ end
 local function addToQueue(file)
 	if not getcustomasset then return end
 	checkFolder()
-	if not isfile(siriusValues.siriusFolder.."/Music/"..file) then queueNotification("Unable to locate file", "Please ensure that your audio file is in the Sirius/Music folder and that you are including the file extension (e.g mp3 or ogg).", 4370341699) return end
+	if not isfile(siriusValues.siriusFolder.."/Music/"..file) then queueNotification("无法找到文件","请确保您的音频文件位于Sirius/Music文件夹中,并且您包含文件扩展名例如(MP3或OGG).", 4370341699) return end
 	musicPanel.AddBox.Input.Text = ""
 
 	local newAudio = musicPanel.Queue.List.Template:Clone()
