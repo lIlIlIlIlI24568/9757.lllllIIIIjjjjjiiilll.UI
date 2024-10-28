@@ -209,7 +209,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "更新",
+			name = "刷新",
 			images = {9134761478, 9134761478},
 			color = Color3.fromRGB(61, 179, 98),
 			enabled = false,
@@ -293,7 +293,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "日日夜夜",
+			name = "白天黑夜切换",
 			images = {9134778004, 10137794784},
 			color = Color3.fromRGB(102, 75, 190),
 			enabled = false,
@@ -328,7 +328,7 @@ local siriusValues = {
 	},
 	sliders = {
 		{
-			name = "player speed",
+			name = "玩家速度",
 			color = Color3.fromRGB(44, 153, 93),
 			values = {0, 300},
 			default = 16,
@@ -343,7 +343,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "jump power",
+			name = "跳跃力量",
 			color = Color3.fromRGB(59, 126, 184),
 			values = {0, 350},
 			default = 50,
@@ -362,7 +362,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "flight speed",
+			name = "飞行速度",
 			color = Color3.fromRGB(177, 45, 45),
 			values = {1, 25},
 			default = 3,
@@ -371,7 +371,7 @@ local siriusValues = {
 			callback = function(value) end,
 		},
 		{
-			name = "field of view",
+			name = "广角（视野）",
 			color = Color3.fromRGB(198, 178, 75),
 			values = {45, 120},
 			default = 70,
