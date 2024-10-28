@@ -3000,7 +3000,7 @@ local function closeSmartBar()
 	tweenService:Create(smartBar, TweenInfo.new(0.5, Enum.EasingStyle.Back), {Size = UDim2.new(0,531,0,64)}):Play()
 	tweenService:Create(smartBar, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {Position = UDim2.new(0.5, 0,1, 73)}):Play()
 
-	-- If tools, move the toggle
+	-- 如果工具，请移动切换
 	if checkTools() then
 		tweenService:Create(toggle, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {Position = UDim2.new(0.5,0,1,-68)}):Play()
 		tweenService:Create(toastsContainer, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {Position = UDim2.new(0.5, 0, 1, -90)}):Play()
@@ -3014,10 +3014,10 @@ end
 
 local function windowFocusChanged(value)
 	if checkSirius() then
-		if value then -- Window Focused
+		if value then -- 窗口聚焦
 			setfpscap(tonumber(checkSetting("Artificial FPS Limit").current))
 			removeReverbs(0.5)
-		else          -- Window unfocused
+		else          -- 窗户未聚焦
 			if checkSetting("Muffle audio while unfocused").current then createReverb(0.7) end
 			if checkSetting("Limit FPS while unfocused").current then setfpscap(60) end
 		end
@@ -3045,7 +3045,7 @@ local function onChatted(player, message)
 		get:Disconnect()
 
 		if hidden and enabled then
-			chatSpyVisuals.Text = "Sirius Spy - [".. player.Name .."]: "..message2
+			chatSpyVisuals.Text = "天狼星间谍 - [".. player.Name .."]: "..message2
 			starterGui:SetCore("ChatMakeSystemMessage", chatSpyVisuals)
 		end
 	end
@@ -3096,17 +3096,17 @@ local function sortPlayers()
 end
 
 local function kill(player)
-	-- kill
+	-- 杀死
 end
 
 local function teleportTo(player)
 	if players:FindFirstChild(player.Name) then
-		queueNotification("Teleportation", "Teleporting to "..player.DisplayName..".")
+		queueNotification("传送","传送到 "..player.DisplayName..".")
 
 		local target = workspace:FindFirstChild(player.Name).HumanoidRootPart
 		localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(target.Position.X, target.Position.Y, target.Position.Z)
 	else
-		queueNotification("Teleportation Error", player.DisplayName.." has left this server.")
+		queueNotification("传送错误", player.DisplayName.." 留下了这个服务器.")
 	end
 end
 
@@ -3141,9 +3141,9 @@ local function createPlayer(player)
 		task.spawn(function()
 			local role = player:GetRoleInGroup(creatorId)
 			if role == "Guest" then
-				newPlayer.Role.Text = "Group Rank: None"
+				newPlayer.Role.Text = "小组排名：无"
 			else
-				newPlayer.Role.Text = "Group Rank: "..role
+				newPlayer.Role.Text = "小组排名: "..role
 			end
 
 			newPlayer.Role.Visible = true
