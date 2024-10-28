@@ -25,7 +25,8 @@ xxxxgo Pre-Hyperion Todo List
  - 窥视动画，如GTA Serverhop，在天空中吐温，然后吐温到其他玩家的头部
  - 聊天间谍跟踪：遵循他们窃窃私语的基于原始信息 
  -  Starlight  
- -  Chatlogs  -  GTA Serverhop  
+ -  Chatlogs 
+ -  GTA Serverhop  
  - 反垃圾邮件（聊天）公式，基于文本长度，帽，表情符号等 
  - 减少任何形式的SIRIUS检测 - 下FPS上的图形自动降低，确保没有误报
  
@@ -385,38 +386,38 @@ local siriusValues = {
 
 local siriusSettings = {
 	{
-		name = '一般',
-		description = 'Sirius的常规设置,从简单到独特的功能.',
+		name = 'General',
+		description = 'The general settings for Sirius, from simple to unique features.',
 		color = Color3.new(0.117647, 0.490196, 0.72549),
 		minimumLicense = 'Free',
 		categorySettings = {
 			{
-				name = '匿名客户',
-				description = '在任何CoreGui Parented接口中实时随机启用您的用户名,包括Sirius. 您仍然将作为您在游戏中的其他人的实际名称.此设置可以是性能密集型的.',
+				name = 'Anonymous Client',
+				description = 'Randomise your username in real-time in any CoreGui parented interface, including Sirius. You will still appear as your actual name to others in-game. This setting can be performance intensive.',
 				settingType = 'Boolean',
 				current = false,
 
 				id = 'anonmode'
 			},
 			{
-				name = '聊天间谍',
-				description = '这只会在遗留roblox聊天系统上工作.Sirius将显示聊天框中通常隐藏在您的低语.',
+				name = 'Chat Spy',
+				description = 'This will only work on the legacy Roblox chat system. Sirius will display whispers usually hidden from you in the chat box.',
 				settingType = 'Boolean',
 				current = true,
 
 				id = 'chatspy'
 			},
 			{
-				name = '隐藏切换按钮',
-				description = '使用Toggle按钮,将删除选项以打开智能栏.',
+				name = 'Hide Toggle Button',
+				description = 'This will remove the option to open the smartBar with the toggle button.',
 				settingType = 'Boolean',
 				current = false,
 
 				id = 'hidetoggle'
 			},
 			{
-				name = '播放通知',
-				description = '播放时,将在您的音乐队列中的下一首歌播放时通知您.',
+				name = 'Now Playing Notifications',
+				description = 'When active, Sirius will notify you when the next song in your Music queue plays.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -444,16 +445,16 @@ local siriusSettings = {
 				id = 'startupsound'
 			}, 
 			{
-				name = '反闲置',
-				description = '删除链接到localplayer空转状态的所有回调和事件. 这可能会迅速检测阿多尼斯或类似的反作用.',
+				name = 'Anti Idle',
+				description = 'Remove all callbacks and events linked to the LocalPlayer Idled state. This may prompt detection from Adonis or similar anti-cheats.',
 				settingType = 'Boolean',
 				current = true,
 
 				id = 'antiidle'
 			},
 			{
-				name = '基于客户的反踢',
-				description = '取消涉及客户发送的任何踢的请求.这可能会提示从Adonis或类似的反作用中检测. 您需要重新加入并重新运行Sirius来切换.',
+				name = 'Client-Based Anti Kick',
+				description = 'Cancel any kick request involving you sent by the client. This may prompt detection from Adonis or similar anti-cheats. You will need to rejoin and re-run Sirius to toggle.',
 				settingType = 'Boolean',
 				current = false,
 
@@ -469,8 +470,8 @@ local siriusSettings = {
 		}
 	},
 	{
-		name = '钥匙绑定',
-		description = '将keybinds分配给操作或更改键控,例如打开/关闭sirius.',
+		name = 'Keybinds',
+		description = 'Assign keybinds to actions or change keybinds such as the one to open/close Sirius.',
 		color = Color3.new(0.0941176, 0.686275, 0.509804),
 		minimumLicense = 'Free',
 		categorySettings = {
@@ -603,14 +604,14 @@ local siriusSettings = {
 		}
 	},
 	{
-		name = '测试',
-		description = '调整并测试Sirius的Roblox的性能设置.',
+		name = 'Performance',
+		description = 'Tweak and test your performance settings for Roblox in Sirius.',
 		color = Color3.new(1, 0.376471, 0.168627),
 		minimumLicense = 'Free',
 		categorySettings = {
 			{
-				name = 'FPS限制',
-				description = '当您将标签到Roblox时,Sirius将自动将您的FPS设置为此数字.',
+				name = 'Artificial FPS Limit',
+				description = 'Sirius will automatically set your FPS to this number when you are tabbed-in to Roblox.',
 				settingType = 'Number',
 				values = {20, 5000},
 				current = 240,
@@ -618,24 +619,24 @@ local siriusSettings = {
 				id = 'fpscap'
 			},
 			{
-				name = '在未聚焦的同时限制FPS',
-				description = '当您从Roblox的标签或不组织时,Sirius将自动将您的FPS设置为60.',
-				settingType = 'Boolean', -- 下面的帽号码!! min和max val
+				name = 'Limit FPS while unfocused',
+				description = 'Sirius will automatically set your FPS to 60 when you tab-out or unfocus from Roblox.',
+				settingType = 'Boolean', -- number for the cap below!! with min and max val
 				current = true,
 
 				id = 'fpsunfocused'
 			},
 			{
-				name = '自适应延迟警告',
-				description = 'SIRIUS将在后台检查您的平均延迟,如果您当前的延迟显着远高于平均延迟,则通知您.',
+				name = 'Adaptive Latency Warning',
+				description = 'Sirius will check your average latency in the background and notify you if your current latency significantly goes above your average latency.',
 				settingType = 'Boolean',
 				current = true,
 
 				id = 'latencynotif'
 			},
 			{
-				name = '自适应性能警告',
-				description = 'SIRIUS将在后台检查您的普通FPS,并在当前的FPS下面低于特定号码时通知您.',
+				name = 'Adaptive Performance Warning',
+				description = 'Sirius will check your average FPS in the background and notify you if your current FPS goes below a specific number.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -644,14 +645,14 @@ local siriusSettings = {
 		}
 	},
 	{
-		name = '检测',
-		description = 'Sirius发现并阻止任何恶意或可能对您的账号造成有害数值.',
+		name = 'Detections',
+		description = 'Sirius detects and prevents anything malicious or possibly harmful to your wellbeing.',
 		color = Color3.new(0.705882, 0, 0),
 		minimumLicense = 'Free',
 		categorySettings = {
 			{
-				name = '空间屏蔽',
-				description = '使用空间屏蔽实时抑制从游戏中的任何音频源播放的大声声音.',
+				name = 'Spatial Shield',
+				description = 'Suppress loud sounds played from any audio source in-game, in real-time with Spatial Shield.',
 				settingType = 'Boolean',
 				minimumLicense = 'Pro',
 				current = true,
@@ -659,8 +660,8 @@ local siriusSettings = {
 				id = 'spatialshield'
 			},
 			{
-				name = '空间屏蔽阈值',
-				description = '声音需要抑制声音.',
+				name = 'Spatial Shield Threshold',
+				description = 'How loud a sound needs to be to be suppressed.',
 				settingType = 'Number',
 				minimumLicense = 'Pro',
 				values = {100, 1000},
@@ -669,8 +670,8 @@ local siriusSettings = {
 				id = 'spatialshieldthreshold'
 			},
 			{
-				name = '管理员检测',
-				description = '每当SIRIUS检测到玩家加入可能是游戏管理员的会话时会收到通知.',
+				name = 'Moderator Detection',
+				description = 'Be notified whenever Sirius detects a player joins your session that could be a game moderator.',
 				settingType = 'Boolean', 
 				minimumLicense = 'Pro',
 				current = true,
@@ -678,8 +679,8 @@ local siriusSettings = {
 				id = 'moddetection'
 			},
 			{
-				name = '智能化HTTP拦截',
-				description = '块外部http/https请求从发送/收到并在允许运行之前询问您.',
+				name = 'Intelligent HTTP Interception',
+				description = 'Block external HTTP/HTTPS requests from being sent/recieved and ask you before allowing it to run.',
 				settingType = 'Boolean',
 				minimumLicense = 'Essential',
 				current = true,
@@ -687,8 +688,8 @@ local siriusSettings = {
 				id = 'intflowintercept'
 			},
 			{
-				name = '智能剪贴板拦截',
-				description = '在允许它设置剪贴板之前,阻止您的剪贴板并询问您.',
+				name = 'Intelligent Clipboard Interception',
+				description = 'Block your clipboard from being set and ask you before allowing it to set your clipboard.',
 				settingType = 'Boolean',
 				minimumLicense = 'Essential',
 				current = true,
@@ -698,21 +699,21 @@ local siriusSettings = {
 		},
 	},
 	{
-		name = '日志记录',
-		description = '将日志发送到您指定的Webhook URL,如玩家加入和叶和消息.',
+		name = 'Logging',
+		description = 'Send logs to your specified webhook URL of things like player joins and leaves and messages.',
 		color = Color3.new(0.905882, 0.780392, 0.0666667),
 		minimumLicense = 'Free',
 		categorySettings = {
 			{
-				name = '日志消息',
-				description = '任何播放器发送到Webhook的日志消息.',
+				name = 'Log Messages',
+				description = 'Log messages sent by any player to your webhook.',
 				settingType = 'Boolean',
 				current = false,
 
 				id = 'logmsg'
 			},
 			{
-				name = '消息Webhook URL',
+				name = 'Message Webhook URL',
 				description = 'Discord Webhook URL',
 				settingType = 'Input',
 				current = 'No Webhook',
@@ -720,15 +721,15 @@ local siriusSettings = {
 				id = 'logmsgurl'
 			},
 			{
-				name = '日志播放器添加了和播放器删除',
-				description = '每当任何玩家离开或加入您的会话时都会日志.',
+				name = 'Log PlayerAdded and PlayerRemoving',
+				description = 'Log whenever any player leaves or joins your session.',
 				settingType = 'Boolean',
 				current = false,
 
 				id = 'logplrjoinleave'
 			},
 			{
-				name = '播放器添加和删除Webhook URL',
+				name = 'Player Added and Removing Webhook URL',
 				description = 'Discord Webhook URL',
 				settingType = 'Input',
 				current = 'No Webhook',
@@ -742,10 +743,10 @@ local siriusSettings = {
 -- 生成随机用户名
 local randomAdjective = siriusValues.nameGeneration.adjectives[math.random(1, #siriusValues.nameGeneration.adjectives)]
 local randomNoun = siriusValues.nameGeneration.nouns[math.random(1, #siriusValues.nameGeneration.nouns)]
-local randomNumber = math.random(100, 3999) -- You can customize the range
+local randomNumber = math.random(100, 3999) -- 您可以自定义范围
 local randomUsername = randomAdjective .. randomNoun .. randomNumber
 
--- Initialise Sirius Client Interface
+-- 初始化Sirius客户端界面
 local guiParent = gethui and gethui() or coreGui
 local sirius = guiParent:FindFirstChild("Sirius")
 if sirius then
@@ -757,7 +758,7 @@ UI.Name = siriusValues.siriusName
 UI.Parent = guiParent
 UI.Enabled = false
 
--- Create Variables for Interface Elements
+-- 为接口元素创建变量
 local characterPanel = UI.Character
 local customScriptPrompt = UI.CustomScriptPrompt
 local securityPrompt = UI.SecurityPrompt
@@ -776,18 +777,18 @@ local toggle = UI.Toggle
 local starlight = UI.Starlight
 local toastsContainer = UI.Toasts
 
--- Interface Caching
+-- 界面缓存
 if not getgenv().cachedInGameUI then getgenv().cachedInGameUI = {} end
 if not getgenv().cachedCoreUI then getgenv().cachedCoreUI = {} end
 
--- Malicious Behavior Prevention
+-- 恶意行为预防
 local indexSetClipboard = "setclipboard"
 local originalSetClipboard = getgenv()[indexSetClipboard]
 
 local index = http_request and "http_request" or "request"
 local originalRequest = getgenv()[index]
 
--- put this into siriusValues, like the fps and ping shit
+-- 把它放进Siriusvalues，就像fps和ping shit
 local suppressedSounds = {}
 local soundSuppressionNotificationCooldown = 0
 local soundInstances = {}
@@ -796,13 +797,13 @@ local cachedText = {}
 
 if not getMessage then siriusValues.chatSpy.enabled = false end
 
--- Call External Modules
+-- 呼叫外部模块
 
--- httpRequest
+-- http请求
 local httpRequest = originalRequest
 
--- Neon Module
-local neonModule = (function() -- Open sourced neon module
+-- 霓虹灯模块
+local neonModule = (function() -- 开源霓虹灯模块
 	local module = {}
 	do
 		local function IsNotNaN(x)
@@ -1029,7 +1030,7 @@ local neonModule = (function() -- Open sourced neon module
 
 end)()
 
--- Sirius Functions
+-- Sirius函数
 local function checkSirius() return UI.Parent end
 local function getPing() return math.clamp(statsService.Network.ServerStatsItem["Data Ping"]:GetValue(), 10, 700) end
 local function checkFolder() if isfolder then if not isfolder(siriusValues.siriusFolder) then makefolder(siriusValues.siriusFolder) end if not isfolder(siriusValues.siriusFolder.."/Music") then makefolder(siriusValues.siriusFolder.."/Music") writefile(siriusValues.siriusFolder.."/Music/readme.txt", "Hey there! Place your MP3 or other audio files in this folder, and have the ability to play them through the Sirius Music UI!") end if not isfolder(siriusValues.siriusFolder.."/Assets/Icons") then makefolder(siriusValues.siriusFolder.."/Assets/Icons") end if not isfolder(siriusValues.siriusFolder.."/Assets") then makefolder(siriusValues.siriusFolder.."/Assets") end end end
