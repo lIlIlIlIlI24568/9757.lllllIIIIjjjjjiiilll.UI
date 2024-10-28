@@ -25,7 +25,8 @@ xxxxgo Pre-Hyperion Todo List
  - 窥视动画，如GTA Serverhop，在天空中吐温，然后吐温到其他玩家的头部
  - 聊天间谍跟踪：遵循他们窃窃私语的基于原始信息 
  -  Starlight  
- -  Chatlogs  -  GTA Serverhop  
+ -  Chatlogs 
+ -  GTA Serverhop  
  - 反垃圾邮件（聊天）公式，基于文本长度，帽，表情符号等 
  - 减少任何形式的SIRIUS检测 - 下FPS上的图形自动降低，确保没有误报
  
@@ -96,27 +97,27 @@ local siriusValues = {
 	interfaceAsset = 14183548964,
 	cdn = "https://cdn.sirius.menu/SIRIUS-SCRIPT-CORE-ASSETS/",
 	icons = "https://cdn.sirius.menu/SIRIUS-SCRIPT-CORE-ASSETS/Icons/",
-	enableExperienceSync = false, -- Games are no longer available due to a lack of whitelisting, they may be made open source at a later date, however they are patched as of now and are useless to the end user. Turning this on may introduce "fake functionality".
+	enableExperienceSync = false, -- 由于缺乏白名单，游戏不再提供，他们可以在以后的日期进行开放，但是它们被修补，截至现在，并不是最终用户的毫无用处. 打开这可能会引入"假功能".
 	games = {
 		BreakingPoint = {
-			name = "Breaking Point",
-			description = "Players are seated around a table. Their only goal? To be the last one standing. Execute this script to gain an unfair advantage.",
+			name = "突破点",
+			description = "球员坐在桌子上. 他们唯一的目标?成为最后一个人的身体. 执行此脚本以获得不公平的优势.",
 			id = 648362523,
 			enabled = true,
 			raw = "BreakingPoint",
 			minimumTier = "Free",
 		},
 		MurderMystery2 = {
-			name = "Murder Mystery 2",
-			description = "A murder has occured, will you be the one to find the murderer, or kill your next victim? Execute this script to gain an unfair advantage.",
+			name = "谋杀神秘2",
+			description = "发生了谋杀案，你能成为找到凶手的人,还是杀死你的下一个受害者?执行此脚本以获得不公平的优势.",
 			id = 142823291,
 			enabled = true,
 			raw = "MurderMystery2",
 			minimumTier = "Free",
 		},
 		TowerOfHell = {
-			name = "Tower Of Hell",
-			description = "A difficult popular parkouring game, with random levels and modifiers. Execute this script to gain an unfair advantage.",
+			name = "地狱之塔",
+			description = "一个困难的流行的科林游戏,随机级别和修饰符. 执行此脚本以获得不公平的优势.",
 			id = 1962086868,
 			enabled = true,
 			raw = "TowerOfHell",
@@ -124,15 +125,15 @@ local siriusValues = {
 		},
 		Strucid = {
 			name = "Strucid",
-			description = "Fight friends and enemies in Strucid with building mechanics! Execute this script to gain an unfair advantage.",
+			description = "用建筑力学与朋友和敌人进行战斗!执行此脚本以获得不公平的优势.",
 			id = 2377868063,
 			enabled = true,
 			raw = "Strucid",
 			minimumTier = "Free",
 		},
 		PhantomForces = {
-			name = "Phantom Forces",
-			description = "One of the most popular FPS shooters from the team at StyLiS Studios. Execute this script to gain an unfair advantage.",
+			name = "幻影力量",
+			description = "来自Stylis Studios团队的最受欢迎的FPS射击者之一.执行此脚本以获得不公平的优势.",
 			id = 292439477,
 			enabled = true,
 			raw = "PhantomForces",
