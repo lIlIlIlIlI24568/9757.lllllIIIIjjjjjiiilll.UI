@@ -187,7 +187,7 @@ local siriusValues = {
 	},
 	actions = {
 		{
-			name = "Noclip",
+			name = "穿墙",
 			images = {14385986465, 9134787693},
 			color = Color3.fromRGB(0, 170, 127),
 			enabled = false,
@@ -195,7 +195,7 @@ local siriusValues = {
 			callback = function() end,
 		},
 		{
-			name = "Flight",
+			name = "飞行",
 			images = {9134755504, 14385992605},
 			color = Color3.fromRGB(170, 37, 46),
 			enabled = false,
@@ -209,7 +209,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "Refresh",
+			name = "更新",
 			images = {9134761478, 9134761478},
 			color = Color3.fromRGB(61, 179, 98),
 			enabled = false,
@@ -231,7 +231,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "Respawn",
+			name = "重生",
 			images = {9134762943, 9134762943},
 			color = Color3.fromRGB(49, 88, 193),
 			enabled = false,
@@ -246,7 +246,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "Invulnerability",
+			name = "无敌",
 			images = {9134765994, 14386216487},
 			color = Color3.fromRGB(193, 46, 90),
 			enabled = false,
@@ -254,7 +254,7 @@ local siriusValues = {
 			callback = function() end,
 		},
 		{
-			name = "Fling",
+			name = "旋转",
 			images = {9134785384, 14386226155},
 			color = Color3.fromRGB(184, 85, 61),
 			enabled = false,
@@ -281,7 +281,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "Extrasensory Perception",
+			name = "肠外感知",
 			images = {9134780101, 14386232387},
 			color = Color3.fromRGB(214, 182, 19),
 			enabled = false,
@@ -293,7 +293,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "Night and Day",
+			name = "日日夜夜",
 			images = {9134778004, 10137794784},
 			color = Color3.fromRGB(102, 75, 190),
 			enabled = false,
@@ -303,7 +303,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "Global Audio",
+			name = "全球音频",
 			images = {9134774810, 14386246782},
 			color = Color3.fromRGB(202, 103, 58),
 			enabled = false,
@@ -318,7 +318,7 @@ local siriusValues = {
 			end,
 		},
 		{
-			name = "Visibility",
+			name = "能见度",
 			images = {14386256326, 9134770786},
 			color = Color3.fromRGB(62, 94, 170),
 			enabled = false,
