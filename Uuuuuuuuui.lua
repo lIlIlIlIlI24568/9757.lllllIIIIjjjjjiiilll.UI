@@ -3665,7 +3665,7 @@ local function assembleSettings()
 
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("此功能已被锁定" "您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu升级.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu升级.", 4483345875)
 								newKeybind.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3947,7 +3947,7 @@ game:GetService("TeleportService"):TeleportToPlaceInstance(']]..placeId..[[', ']
 		)
 		queueNotification("复制加入脚本","成功设置剪贴板加入脚本,播放器可以使用此脚本加入您的特定服务器.", 4335479121)
 	else
-		queueNotification("无法复制加入脚本","缺少SetClipboard（）函数，无法将数据设置为剪贴板.", 4335479658)
+		queueNotification("无法复制加入脚本","缺少SetClipboard()函数，无法将数据设置为剪贴板.", 4335479658)
 	end
 end)
 
@@ -3956,7 +3956,7 @@ homeContainer.Interactions.Discord.Interact.MouseButton1Click:Connect(function()
 		originalSetClipboard("https://sirius.menu/discord")
 		queueNotification("Discord Invite复制了","我们已经将剪贴板设置为Sirius Discord Invite.", 4335479121)
 	else
-		queueNotification("无法复制Discord Invite","缺少SetClipboard（）函数,无法将数据设置为剪贴板.", 4335479658)
+		queueNotification("无法复制Discord Invite","缺少SetClipboard()函数,无法将数据设置为剪贴板.", 4335479658)
 	end
 end)
 
@@ -4238,7 +4238,7 @@ players.PlayerAdded:Connect(function(player)
 			for _, role in pairs(siriusValues.administratorRoles) do 
 				if string.find(string.lower(roleFound), role) then
 					promptModerator(player, roleFound)
-					queueNotification("Administrator Joined", siriusValues.currentGroup .." "..roleFound.." ".. player.DisplayName .." has joined your session", 3944670656) -- change to group name
+					queueNotification("管理员加入", siriusValues.currentGroup .." "..roleFound.." ".. player.DisplayName .." 已加入您的会话", 3944670656) -- 更改为组名称
 				end
 			end
 		end
@@ -4246,7 +4246,7 @@ players.PlayerAdded:Connect(function(player)
 
 	if checkSetting("Friend Notifications").current then
 		if localPlayer:IsFriendsWith(player.UserId) then
-			queueNotification("Friend Joined", "Your friend "..player.DisplayName.." has joined your server.", 4370335364)
+			queueNotification("朋友加入了","你的朋友 "..player.DisplayName.." 已加入您的服务器.", 4370335364)
 		end
 	end
 end)
@@ -4407,7 +4407,7 @@ runService.Heartbeat:Connect(function(frame)
 						sound.Volume = 0
 					end
 					if soundSuppressionNotificationCooldown == 0 then
-						queueNotification("Spatial Shield","A high-volume audio is being played ("..sound.Name..") and it has been suppressed.", 4483362458) 
+						queueNotification("空间屏蔽","正在播放大批量音频 ("..sound.Name..") 它被抑制了.", 4483362458) 
 						soundSuppressionNotificationCooldown = 15
 					end
 					table.remove(soundInstances, index)
@@ -4416,7 +4416,7 @@ runService.Heartbeat:Connect(function(frame)
 		end
 	end
 
-	if checkSetting("Anonymous Client").current then
+	if checkSetting("匿名客户").current then
 		for _, text in ipairs(cachedText) do
 			local lowerText = string.lower(text.Text)
 			if string.find(lowerText, lowerName, 1, true) or string.find(lowerText, lowerDisplayName, 1, true) then
@@ -4561,7 +4561,7 @@ while task.wait(1) do
 
 		disconnectedPrompt.Action.MouseButton1Click:Connect(function()
 			if disconnectType == "ban" then
-				game:Shutdown() -- leave
+				game:Shutdown() -- 离开
 			elseif disconnectType == "kick" then
 				serverhop()
 			elseif disconnectType == "network" then
@@ -4576,8 +4576,8 @@ while task.wait(1) do
 		-- 双向自适应延迟检查
 		if checkHighPing() then
 			if siriusValues.pingProfile.pingNotificationCooldown <= 0 then
-				if checkSetting("Adaptive Latency Warning").current then
-					queueNotification("High Latency Warning","We've noticed your latency has reached a higher value than usual, you may find that you are lagging or your actions are delayed in-game. Consider checking for any background downloads on your machine.", 4370305588)
+				if checkSetting("自适应延迟警告").current then
+					queueNotification("高延迟警告","我们注意到您的延迟达到了比平常更高的值,您可能会发现您正在滞后或您的操作在游戏中延迟.考虑检查机器上的任何背景下载.", 4370305588)
 					siriusValues.pingProfile.pingNotificationCooldown = 120
 				end
 			end
@@ -4593,8 +4593,8 @@ while task.wait(1) do
 				local avgFPS = siriusValues.frameProfile.totalFPS / #siriusValues.frameProfile.fpsQueue
 
 				if avgFPS < siriusValues.frameProfile.lowFPSThreshold then
-					if checkSetting("Adaptive Performance Warning").current then
-						queueNotification("Degraded Performance","We've noticed your client's frames per second have decreased. Consider checking for any background tasks or programs on your machine.", 4384400106)
+					if checkSetting("自适应性能警告").current then
+						queueNotification("性能退化","我们注意到每秒客户的帧已经减少.考虑检查机器上的任何后台任务或程序.", 4384400106)
 						siriusValues.frameProfile.frameNotificationCooldown = 120	
 					end
 				end
