@@ -1612,7 +1612,7 @@ local function syncExperienceInformation()
 
 			gameDetectionPrompt.Layer.Run.MouseButton1Click:Connect(function()
 				closeGameDetection()
-				queueNotification("运行 "..gameFound.name, "现在运行天狼星' "..gameFound.name.." 脚本,这可能需要片刻.", 4400701828)
+				queueNotification("运行 "..gameFound.name, "现在运行天狼星"..gameFound.name.." 脚本,这可能需要片刻.", 4400701828)
 				runScript(rawFile)
 
 			end)
@@ -3845,7 +3845,7 @@ end)
 characterPanel.Interactions.Reset.MouseEnter:Connect(function() if debounce then return end tweenService:Create(characterPanel.Interactions.Reset, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {ImageTransparency = 0}):Play() end)
 characterPanel.Interactions.Reset.MouseLeave:Connect(function() if debounce then return end tweenService:Create(characterPanel.Interactions.Reset, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {ImageTransparency = 0.7}):Play() end)
 
-local playerSearch = playerlistPanel.Interactions.SearchFrame.SearchBox -- move this up to Variables once finished
+local playerSearch = playerlistPanel.Interactions.SearchFrame.SearchBox -- 完成后将其移动到变量
 
 playerSearch:GetPropertyChangedSignal("Text"):Connect(function()
 	local query = string.lower(playerSearch.Text)
@@ -3947,7 +3947,7 @@ game:GetService("TeleportService"):TeleportToPlaceInstance(']]..placeId..[[', ']
 		)
 		queueNotification("复制加入脚本","成功设置剪贴板加入脚本,播放器可以使用此脚本加入您的特定服务器.", 4335479121)
 	else
-		queueNotification("无法复制加入脚本","缺少SetClipboard()函数，无法将数据设置为剪贴板.", 4335479658)
+		queueNotification("无法复制加入脚本","缺少SetClipboard()函数,无法将数据设置为剪贴板.", 4335479658)
 	end
 end)
 
@@ -4416,7 +4416,7 @@ runService.Heartbeat:Connect(function(frame)
 		end
 	end
 
-	if checkSetting("匿名客户").current then
+	if checkSetting("Anonymous Client").current then
 		for _, text in ipairs(cachedText) do
 			local lowerText = string.lower(text.Text)
 			if string.find(lowerText, lowerName, 1, true) or string.find(lowerText, lowerDisplayName, 1, true) then
@@ -4576,7 +4576,7 @@ while task.wait(1) do
 		-- 双向自适应延迟检查
 		if checkHighPing() then
 			if siriusValues.pingProfile.pingNotificationCooldown <= 0 then
-				if checkSetting("自适应延迟警告").current then
+				if checkSetting("Adaptive Latency Warning").current then
 					queueNotification("高延迟警告","我们注意到您的延迟达到了比平常更高的值,您可能会发现您正在滞后或您的操作在游戏中延迟.考虑检查机器上的任何背景下载.", 4370305588)
 					siriusValues.pingProfile.pingNotificationCooldown = 120
 				end
@@ -4593,7 +4593,7 @@ while task.wait(1) do
 				local avgFPS = siriusValues.frameProfile.totalFPS / #siriusValues.frameProfile.fpsQueue
 
 				if avgFPS < siriusValues.frameProfile.lowFPSThreshold then
-					if checkSetting("自适应性能警告").current then
+					if checkSetting("Adaptive Performance Warning").current then
 						queueNotification("性能退化","我们注意到每秒客户的帧已经减少.考虑检查机器上的任何后台任务或程序.", 4384400106)
 						siriusValues.frameProfile.frameNotificationCooldown = 120	
 					end
