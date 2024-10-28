@@ -3510,7 +3510,7 @@ local function assembleSettings()
 					newSwitch.Interact.MouseButton1Click:Connect(function()
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu升级.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								return
 							end
 						end
@@ -3561,7 +3561,7 @@ local function assembleSettings()
 					newInput.InputFrame.InputBox.FocusLost:Connect(function()
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu升级.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								newInput.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3606,7 +3606,7 @@ local function assembleSettings()
 
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu升级.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								newInput.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3665,7 +3665,7 @@ local function assembleSettings()
 
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu升级.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								newKeybind.InputFrame.InputBox.Text = setting.current
 								return
 							end
