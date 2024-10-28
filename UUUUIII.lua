@@ -2138,7 +2138,7 @@ local function openPanel(panelName)
 end
 
 local function rejoin()
-	queueNotification("Rejoining Session", "We're queueing a rejoin to this session, give us a moment.", 4400696294)
+	queueNotification("再加入会话","我们向本次会议排队,给我们一个时刻.", 4400696294)
 
 	if #players:GetPlayers() <= 1 then
 		task.wait()
@@ -2162,11 +2162,11 @@ local function serverhop()
 	end
 
 	if #servers > 0 then
-		queueNotification("Teleporting", "We're now moving you to the new session, this may take a few seconds.", 4335479121)
+		queueNotification("传送","我们现在将您搬到新会议,这可能需要几秒钟.", 4335479121)
 		task.wait(0.3)
 		teleportService:TeleportToPlaceInstance(placeId, servers[1])
 	else
-		return queueNotification("No Servers Found", "We couldn't find another server, this may be the only server.", 4370317928)
+		return queueNotification("没有找到服务器","我们找不到另一台服务器,这可能是唯一的服务器.", 4370317928)
 	end
 
 end
@@ -2346,34 +2346,34 @@ local function UpdateHome()
 		return format(Hours)..":"..format(Minutes)..":"..format(Seconds)
 	end
 
-	-- Home Title
-	homeContainer.Title.Text = "Welcome home, "..localPlayer.DisplayName
+	-- 主张
+	homeContainer.Title.Text = "欢迎回家, "..localPlayer.DisplayName
 
-	-- Players
+	-- 玩家
 	homeContainer.Interactions.Server.Players.Value.Text = #players:GetPlayers().." playing"
 	homeContainer.Interactions.Server.MaxPlayers.Value.Text = players.MaxPlayers.." players can join this server"
 
 	-- Ping
 	homeContainer.Interactions.Server.Latency.Value.Text = math.floor(getPing()).."ms"
 
-	-- Time
+	-- 时间
 	homeContainer.Interactions.Server.Time.Value.Text = convertToHMS(time())
 
-	-- Region
+	-- 地区
 	homeContainer.Interactions.Server.Region.Value.Text = "Unable to retrieve region"
 
-	-- Player Information
+	-- 玩家信息
 	homeContainer.Interactions.User.Avatar.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..localPlayer.UserId.."&width=420&height=420&format=png"
 	homeContainer.Interactions.User.Title.Text = localPlayer.DisplayName
 	homeContainer.Interactions.User.Subtitle.Text = localPlayer.Name
 
-	-- Update Executor
+	-- 更新执行程序
 	homeContainer.Interactions.Client.Title.Text = identifyexecutor()
 	if not table.find(siriusValues.executors, string.lower(identifyexecutor())) then
-		homeContainer.Interactions.Client.Subtitle.Text = "This executor is not verified as supported."
+		homeContainer.Interactions.Client.Subtitle.Text = "此执行程序未被验证为支持."
 	end
 
-	-- Update Friends Statuses
+	-- 更新朋友状态
 	checkFriends()
 end
 
