@@ -3510,7 +3510,7 @@ local function assembleSettings()
 					newSwitch.Interact.MouseButton1Click:Connect(function()
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								return
 							end
 						end
@@ -3561,7 +3561,7 @@ local function assembleSettings()
 					newInput.InputFrame.InputBox.FocusLost:Connect(function()
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								newInput.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3606,7 +3606,7 @@ local function assembleSettings()
 
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								newInput.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3665,7 +3665,7 @@ local function assembleSettings()
 
 						if minimumLicense then
 							if (minimumLicense == "Pro" and not Pro) or (minimumLicense == "Essential" and not (Pro or Essential)) then
-								queueNotification("This feature is locked", "You must be "..minimumLicense.." or higher to use "..setting.name..". \n\nUpgrade at https://sirius.menu.", 4483345875)
+								queueNotification("此功能已被锁定","您必须是 "..minimumLicense.." 或更高的使用 "..setting.name..". \n\n在https://sirius.menu/升级.", 4483345875)
 								newKeybind.InputFrame.InputBox.Text = setting.current
 								return
 							end
@@ -3768,7 +3768,7 @@ local function initialiseAntiKick()
 end
 
 local function start()
-	if siriusValues.releaseType == "Experimental" then -- Make this more secure.
+	if siriusValues.releaseType == "Experimental" then -- 让这个更安全.
 		if not Pro then localPlayer:Kick("This is an experimental release, you must be Pro to run this. \n\nUpgrade at https://sirius.menu/") return end
 	end
 	windowFocusChanged(true)
@@ -3822,7 +3822,7 @@ local function start()
 	end
 end
 
--- Sirius Events
+-- 天狼星活动
 
 start()
 
@@ -3845,7 +3845,7 @@ end)
 characterPanel.Interactions.Reset.MouseEnter:Connect(function() if debounce then return end tweenService:Create(characterPanel.Interactions.Reset, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {ImageTransparency = 0}):Play() end)
 characterPanel.Interactions.Reset.MouseLeave:Connect(function() if debounce then return end tweenService:Create(characterPanel.Interactions.Reset, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {ImageTransparency = 0.7}):Play() end)
 
-local playerSearch = playerlistPanel.Interactions.SearchFrame.SearchBox -- move this up to Variables once finished
+local playerSearch = playerlistPanel.Interactions.SearchFrame.SearchBox -- 完成后将其移动到变量
 
 playerSearch:GetPropertyChangedSignal("Text"):Connect(function()
 	local query = string.lower(playerSearch.Text)
