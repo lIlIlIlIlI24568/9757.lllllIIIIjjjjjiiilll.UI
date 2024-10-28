@@ -1695,7 +1695,7 @@ local function sortActions()
 		end)
 
 		characterPanel.Interactions.Grid.MouseLeave:Connect(function()
-			characterPanel.Interactions.ActionsTitle.Text = "玩家动作"
+			characterPanel.Interactions.ActionsTitle.Text = "玩家通用功能"
 		end)
 
 		newAction.Interact.MouseButton1Click:Connect(function()
@@ -3838,7 +3838,7 @@ characterPanel.Interactions.Reset.MouseButton1Click:Connect(function()
 	resetSliders()
 
 	characterPanel.Interactions.Reset.Rotation = 360
-	queueNotification("Slider Values Reset","Successfully reset all character panel sliders", 4400696294)
+	queueNotification("滑块值重置","成功重置所有字符面板滑块", 4400696294)
 	tweenService:Create(characterPanel.Interactions.Reset, TweenInfo.new(.5,Enum.EasingStyle.Back),  {Rotation = 0}):Play()
 end)
 
@@ -4527,7 +4527,7 @@ while task.wait(1) do
 		if disconnectType == "ban" then
 			disconnectedPrompt.Content.Text = "你已经被禁止了,你想离开这个服务器吗?"
 			disconnectedPrompt.Action.Text = "Leave"
-			disconnectedPrompt.Action.Size = UDim2.new(0, 77, 0, 36) -- use textbounds
+			disconnectedPrompt.Action.Size = UDim2.new(0, 77, 0, 36) -- 使用文本界限
 
 			disconnectedPrompt.UIGradient.Color = ColorSequence.new({
 				ColorSequenceKeypoint.new(0, Color3.new(0,0,0)),
@@ -4535,7 +4535,7 @@ while task.wait(1) do
 			})
 		elseif disconnectType == "kick" then
 			disconnectedPrompt.Content.Text = "你被踢了,你想服务器跳转吗?"
-			disconnectedPrompt.Action.Text = "Serverhop"
+			disconnectedPrompt.Action.Text = "跳转服务器"
 			disconnectedPrompt.Action.Size = UDim2.new(0, 114, 0, 36)
 
 			disconnectedPrompt.UIGradient.Color = ColorSequence.new({
@@ -4544,7 +4544,7 @@ while task.wait(1) do
 			})
 		elseif disconnectType == "network" then
 			disconnectedPrompt.Content.Text = "你迷失了连接,你想重新加入吗?"
-			disconnectedPrompt.Action.Text = "Rejoin"
+			disconnectedPrompt.Action.Text = "重新加入"
 			disconnectedPrompt.Action.Size = UDim2.new(0, 82, 0, 36)
 
 			disconnectedPrompt.UIGradient.Color = ColorSequence.new({
